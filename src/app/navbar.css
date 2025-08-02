@@ -1,0 +1,9 @@
+.header-elem {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.header-elem:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 16px 4px #3b82f6;
+  color: #fff;
+}
