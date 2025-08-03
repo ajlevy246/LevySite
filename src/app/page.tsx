@@ -4,13 +4,11 @@ import TiltedCard from '@/blocks/Components/TiltedCard/TiltedCard';
 import RollingGallery from "@/blocks/Components/RollingGallery/RollingGallery";
 import Link from "next/link";
 
-import './glow.css'
-
 function Intro() {
   return (
-    <section className="flex flex-cols justify-center space-x-[15%] p-16">
-      <div className="mt-[5%] max-w-md">
-        <div className="text-5xl text-white mb-1">Alex Levy</div>
+    <section className="flex flex-cols justify-center space-x-[15%]">
+      <div className="pt-[5%] max-w-md">
+        <div className="sectionTitle text-5xl text-white mb-1">Alex Levy</div>
         <TextType
           className="text-2xl text-gray-300 mb-4"
           text={["Welcome to my personal site!"]}
@@ -46,6 +44,7 @@ function LevyCAS() {
     <section className="flex justify-center space-x-[15%]">
       <div className="w-[20%]">
         <div className="text-2xl mb-8"> LevyCAS</div>
+        <hr className="max-w-[100px] border-blue-800" />
         <div className="text-lg text-gray-500">A capable computer algebra system written entirely in python,
           complete with a Pratt Parser for parsing natural language into mathematical expressions. 
           Comes equipped with operations from calculus and number theory, including symbolic integration and 
@@ -53,12 +52,12 @@ function LevyCAS() {
         </div>
       </div>
       <Link
-        className="glowOnHover"
+        className="max-w-[600px] max-h-[200px]"
         href="https://huggingface.co/spaces/ajlevy246/levycas-app"
         target="_blank"
       >
         <Image
-          className="w-[600px] h-[200px]"
+          className="glowOnHover h-auto w-auto border-collapse border-[5px] rounded-lg border-solid border-black"
           src="/levycasdemo.jpg"
           alt="Screenshot from the LevyCAS demo" 
           width="1875"
@@ -87,10 +86,12 @@ function EarlerParser() {
 function Projects() {
   return (
     <section id="Projects">
-      <div className="text-5xl text-center mb-8"> Projects </div>
-      <ul>
-        <li className="mb-20"><LevyCAS /></li>
-        <li className="mb-20"><EarlerParser /></li>
+      <div className="sectionTitle text-5xl text-center mb-[5%] background"> Projects </div>
+      <ul className="space-y-20">
+        <li><LevyCAS /></li>
+        <hr className="w-[15%] justify-self-center border-blue-800"/>
+        <li><EarlerParser /></li>
+        <hr className="w-[10%] justify-self-center border-blue-800"/>
       </ul>
     </section>
   )
@@ -99,8 +100,9 @@ function Projects() {
 export default function Home() {
   return (
     <main className="mx-[10%]">
-      <section className="h-screen">
+      <section className="mt-[10%]">
       <Intro />
+      <div id="gallery" className="mt-[10%]">
       <RollingGallery
         autoplay={true}
         pauseOnHover={false}
@@ -113,9 +115,12 @@ export default function Home() {
           "/gallery/gallery6.jpg",
           "/gallery/gallery7.jpg",
         ]}
-      />
-      </section>
+        />
+      </div>
+      <div id="projects" className="mt-[10%]">
       <Projects />
+      </div>
+      </section>
     </main>
   )
 }

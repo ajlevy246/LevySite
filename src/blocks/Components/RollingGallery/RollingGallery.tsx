@@ -51,7 +51,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
   }, []);
 
   // const cylinderWidth: number = isScreenSizeSm ? 1100 : 1800;
-  const cylinderWidth: number = isScreenSizeSm ? 1700 : 2200;
+  const cylinderWidth: number = isScreenSizeSm ? 1000 : 2200;
   const faceCount: number = galleryImages.length;
   const faceWidth: number = (cylinderWidth / faceCount) * 2;
   const radius: number = cylinderWidth / (2 * Math.PI);
@@ -125,21 +125,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
   };
 
   return (
-    <div className="relative h-[500px] w-full overflow-hidden">
-      {/* <div
-        className="absolute top-0 left-0 h-full w-[48px] z-10"
-        style={{
-          background:
-            "linear-gradient(to left, rgba(0,0,0,0) 0%, #060010 100%)",
-        }}
-      />
-      <div
-        className="absolute top-0 right-0 h-full w-[48px] z-10"
-        style={{
-          background:
-            "linear-gradient(to right, rgba(0,0,0,0) 0%, #060010 100%)",
-        }}
-      /> */}
+    <div className="relative h-[300px] w-full overflow-hidden">
       <div className="flex h-full items-center justify-center [perspective:1000px] [transform-style:preserve-3d]">
         <motion.div
           drag="x"

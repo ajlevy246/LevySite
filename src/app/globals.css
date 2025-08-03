@@ -21,3 +21,17 @@ html, body {
   color: var(--foreground);
   font-family: var(--font-roboto-condensed), Arial, Helvetica, sans-serif;
 }
+
+.glowOnHover {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.glowOnHover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 16px 4px #3b82f6;
+    color: #fff;
+}
+
+.sectionTitle {
+    text-shadow: 0 0 16px #3b82f6;
+}
