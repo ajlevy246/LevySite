@@ -61,7 +61,7 @@ function NavItem({ title, href }: NavItemProps) {
                 onBlur={handleBlur}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                className={`text-lg relative rounded-3xl border border-neutral-800 overflow-hidden px-4 py-2 inline-flex mr-4 ${isHovered ? 'bg-blue-500' : ''}`}
+                className={`text-lg font-semi-bold relative rounded-3xl border border-neutral-800 overflow-hidden px-4 py-2 inline-flex mr-4 ${isHovered ? 'bg-blue-500' : ''}`}
                 style={{
                     transition: `transform 0.2s, box-shadow 0.2s`,
                     transform: `scale(${scale})`,
