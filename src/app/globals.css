@@ -35,3 +35,12 @@ html, body {
 .sectionTitle {
     text-shadow: 0 0 16px #3b82f6;
 }
+
+.glow {
+    transition: transform 0.2s;
+    box-shadow: 0 0 16px 1px #3b82f6;
+}
+
+.glow:hover {
+    transform: scale(1.05);
+}
