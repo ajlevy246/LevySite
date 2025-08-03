@@ -43,8 +43,8 @@ function LevyCAS() {
   return (
     <section className="flex justify-center space-x-[15%]">
       <div className="w-[20%]">
-        <div className="text-2xl mb-8"> LevyCAS</div>
-        <hr className="max-w-[100px] border-blue-800" />
+        <div className="text-2xl mb-4"> LevyCAS</div>
+        <hr className="max-w-[100px] border-blue-800 mb-2" />
         <div className="text-lg text-gray-500">A capable computer algebra system written entirely in python,
           complete with a Pratt Parser for parsing natural language into mathematical expressions. 
           Comes equipped with operations from calculus and number theory, including symbolic integration and 
@@ -57,7 +57,7 @@ function LevyCAS() {
         target="_blank"
       >
         <Image
-          className="glowOnHover h-auto w-auto border-collapse border-[5px] rounded-lg border-solid border-black"
+          className="glow glowOnHover h-auto w-auto border-collapse border-[5px] rounded-lg border-solid border-black"
           src="/levycasdemo.jpg"
           alt="Screenshot from the LevyCAS demo" 
           width="1875"
@@ -70,13 +70,25 @@ function LevyCAS() {
 
 function EarlerParser() {
   return (
-      <section className="flex justify-center space-x-[15%]">
-      <div>Over here will be the image!</div>
+    <section className="flex justify-center space-x-[15%]">
+      <Link
+        className="max-w-[600px] max-h-[200px]"
+        href="https://huggingface.co/spaces/ajlevy246/levycas-app"
+        target="_blank"
+      >
+        <Image
+          className="glow glowOnHover h-auto w-auto border-collapse border-[5px] rounded-lg border-solid border-black"
+          src="/levycasdemo.jpg"
+          alt="Screenshot from the LevyCAS demo" 
+          width="1875"
+          height="575"
+        />
+      </Link>
       <div className="w-[20%]">
-        <div className="text-lg"> LevyCAS</div>
-        <div className="text-gray-500">A capable computer algebra system written entirely in python,
-          complete with a Pratt Parser for parsing natural language into mathematical expressions. Comes equipped
-          with many algorithms from calculus and number theory. 
+        <div className="text-2xl mb-4"> Earley Parser Generator</div>
+        <hr className="max-w-[100px] border-blue-800 mb-2" />
+        <div className="text-lg text-gray-500">A python package capable of parsing arbitrary user defined context-free grammars.
+          Uses a top-down Earley Parser written in pure python. Returns ambiguous parse forests, with methods to extract and modify trees.
         </div>
       </div>
     </section>
@@ -84,14 +96,20 @@ function EarlerParser() {
 }
 
 function Projects() {
+  function Separator() {
+    return (
+      <li><hr className="w-[15%] justify-self-center border-blue-800"/></li>
+    )
+  }
+
   return (
     <section id="Projects">
       <div className="sectionTitle text-5xl text-center mb-[5%] background"> Projects </div>
       <ul className="space-y-20">
         <li><LevyCAS /></li>
-        <hr className="w-[15%] justify-self-center border-blue-800"/>
+        <Separator />
         <li><EarlerParser /></li>
-        <hr className="w-[10%] justify-self-center border-blue-800"/>
+        <Separator />
       </ul>
     </section>
   )
