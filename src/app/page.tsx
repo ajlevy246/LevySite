@@ -8,9 +8,9 @@ function Intro() {
   return (
     <section className="flex flex-cols justify-center space-x-[15%]">
       <div className="pt-[5%] max-w-md">
-        <div className="sectionTitle text-5xl text-white mb-1">Alex Levy</div>
+        <div className="sectionTitle text-6xl text-white mb-1">Alex Levy</div>
         <TextType
-          className="text-2xl text-gray-300 mb-4"
+          className="text-3xl text-gray-300 mb-4"
           text={["Welcome to my personal site!"]}
           typingSpeed={75}
           deletingSpeed={0}
@@ -18,7 +18,7 @@ function Intro() {
           startOnVisible={true}
           initialDelay={0}
         />
-        <div className="text-lg text-gray-500">
+        <div className="text-2xl text-gray-500">
           Hi there! I'm a senior at Virginia Tech studying computer science and discrete math. 
           I'm currently studying the applications of graph theory in machine learning. 
           I love all things skiing, eating, and math (in that order). 
@@ -43,9 +43,9 @@ function LevyCAS() {
   return (
     <section className="flex justify-center space-x-[15%]">
       <div className="w-[20%]">
-        <div className="text-2xl mb-4"> LevyCAS</div>
-        <hr className="max-w-[100px] border-blue-800 mb-2" />
-        <div className="text-lg text-gray-500">A capable computer algebra system written entirely in python,
+        <div className="sectionTitle text-2xl text-center mb-4"> LevyCAS</div>
+        <hr className=" border-blue-800 mb-2" />
+        <div className="text-xl text-gray-500">A capable computer algebra system written entirely in python,
           complete with a Pratt Parser for parsing natural language into mathematical expressions. 
           Comes equipped with operations from calculus and number theory, including symbolic integration and 
           prime factorization.
@@ -85,9 +85,9 @@ function EarlerParser() {
         />
       </Link>
       <div className="w-[20%]">
-        <div className="text-2xl mb-4"> Earley Parser Generator</div>
-        <hr className="max-w-[100px] border-blue-800 mb-2" />
-        <div className="text-lg text-gray-500">A python package capable of parsing arbitrary user defined context-free grammars.
+        <div className="sectionTitle text-2xl text-center mb-4"> Earley Parser Generator</div>
+        <hr className="border-blue-800 mb-2" />
+        <div className="text-xl text-gray-500">A python package capable of parsing arbitrary user defined context-free grammars.
           Uses a top-down Earley Parser written in pure python. Returns ambiguous parse forests, with methods to extract and modify trees.
         </div>
       </div>
@@ -123,7 +123,7 @@ export default function Home() {
       <div id="gallery" className="mt-[10%]">
       <RollingGallery
         autoplay={true}
-        pauseOnHover={false}
+        pauseOnHover={true}
         images={[
           "/gallery/gallery1.jpg",
           "/gallery/gallery2.jpg",

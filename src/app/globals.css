@@ -5,7 +5,7 @@
 
 
 :root {
-  --background: linear-gradient(135deg, #000000 0%, #0a1a3c 100%);
+  --background: linear-gradient(120deg, #000000 0%, #0a1a3c 100%);
   --foreground: #ffffff;
   --font-sans: var(--font-roboto-condensed)
 }
@@ -34,6 +34,11 @@ html, body {
 
 .sectionTitle {
     text-shadow: 0 0 16px #3b82f6;
+}
+
+.backgroundGlow {
+    box-shadow: 0 0 16px 1px #3b82f6;
+    background-color: #3b82f6;
 }
 
 .glow {
