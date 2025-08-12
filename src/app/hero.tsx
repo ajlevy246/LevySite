@@ -23,7 +23,7 @@ export default function HeroIntro() {
             backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url('/introbackground.jpg')`
         }}
         />
-        <div className='h-[100vh] flex flex-col space-y-[10px] justify-center items-center'>
+        <div className='h-[100vh] flex flex-col space-y-[35px] justify-center items-center'>
             <Image
                 src="/me.jpg"
                 alt="Me"
@@ -31,7 +31,7 @@ export default function HeroIntro() {
                 height="3024"
                 className="backgroundGlow rounded-full border-black border-[5px] object-cover object-right w-[300px] h-[300px]"
             />
-            <div className="sectionTitle text-white text-8xl">Alex Levy</div>
+            <div className="sectionTitle text-white text-9xl">Alex Levy</div>
         </div>
     </section>
   )
