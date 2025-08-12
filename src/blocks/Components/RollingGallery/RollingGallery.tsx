@@ -5,6 +5,7 @@
 */
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import {
   motion,
   useMotionValue,
@@ -56,7 +57,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
   const faceWidth: number = (cylinderWidth / faceCount) * 2;
   const radius: number = cylinderWidth / (2 * Math.PI);
 
-  const dragFactor: number = 0.05;
+  const dragFactor: number = 0.002;
   const rotation = useMotionValue(0);
   const controls = useAnimation();
 
@@ -126,7 +127,7 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
 
   return (
     <div className="relative h-[300px] w-full overflow-hidden">
-      <div className="flex h-full items-center justify-center [perspective:1000px] [transform-style:preserve-3d]">
+      <div className="hidden sm:flex h-full items-center justify-center [perspective:1000px] [transform-style:preserve-3d]">
         <motion.div
           drag="x"
           dragElastic={0}
@@ -153,10 +154,13 @@ const RollingGallery: React.FC<RollingGalleryProps> = ({
                 transform: `rotateY(${(360 / faceCount) * i}deg) translateZ(${radius}px)`,
               }}
             >
-              <img
+              <Image
                 src={url}
                 alt="gallery"
-                className="glow pointer-events-none h-[150px] w-[300px] rounded-[15px] border-[3px] border-white object-cover transition-transform duration-300 ease-out group-hover:scale-105 sm:h-[100px] sm:w-[220px]"
+                width="3000"
+                height="4000"
+                // adjust size of images here
+                className="glow pointer-events-none md:min-w-[300px] md:min-h-[160px] h-auto w-auto rounded-[15px] border-[3px] border-white object-cover transition-transform duration-300 ease-out group-hover:scale-105 sm:h-[100px] sm:w-[220px]"
               />
             </div>
           ))}

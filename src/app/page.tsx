@@ -6,7 +6,7 @@ import Link from "next/link";
 
 function Intro() {
   return (
-    <section className="flex flex-cols justify-center space-x-[15%]">
+    <section className="hidden sm:flex flex-cols justify-center space-x-[15%]">
       <div className="pt-[5%] max-w-md">
         <div className="sectionTitle text-6xl text-white mb-1">Alex Levy</div>
         <TextType
@@ -18,7 +18,7 @@ function Intro() {
           startOnVisible={true}
           initialDelay={0}
         />
-        <div className="text-2xl text-gray-500">
+        <div className="text-2xl text-gray-400">
           Hi there! I'm a senior at Virginia Tech studying computer science and discrete math. 
           I'm currently studying the applications of graph theory in machine learning. 
           I love all things skiing, eating, and math (in that order). 
@@ -41,11 +41,11 @@ function Intro() {
 
 function LevyCAS() {
   return (
-    <section className="flex justify-center space-x-[15%]">
+    <li className="flex justify-center items-center space-x-[15%]">
       <div className="w-[20%]">
-        <div className="sectionTitle text-2xl text-center mb-4"> LevyCAS</div>
-        <hr className=" border-blue-800 mb-2" />
-        <div className="text-xl text-gray-500">A capable computer algebra system written entirely in python,
+        <div className="sectionTitle text-3xl text-center mb-4"> LevyCAS</div>
+        <hr className="border-blue-800 mb-2" />
+        <div className="text-md md:text-2xl text-gray-400">A capable computer algebra system written entirely in python,
           complete with a Pratt Parser for parsing natural language into mathematical expressions. 
           Comes equipped with operations from calculus and number theory, including symbolic integration and 
           prime factorization.
@@ -64,13 +64,13 @@ function LevyCAS() {
           height="575"
         />
       </Link>
-    </section>
+    </li>
   )
 }
 
-function EarlerParser() {
+function EarleyParser() {
   return (
-    <section className="flex justify-center space-x-[15%]">
+    <li className="flex justify-center items-center space-x-[15%]">
       <Link
         className="max-w-[600px] max-h-[200px]"
         href="https://huggingface.co/spaces/ajlevy246/levycas-app"
@@ -85,20 +85,50 @@ function EarlerParser() {
         />
       </Link>
       <div className="w-[20%]">
-        <div className="sectionTitle text-2xl text-center mb-4"> Earley Parser Generator</div>
+        <div className="sectionTitle text-3xl text-center mb-4"> Earley Parser Generator</div>
         <hr className="border-blue-800 mb-2" />
-        <div className="text-xl text-gray-500">A python package capable of parsing arbitrary user defined context-free grammars.
-          Uses a top-down Earley Parser written in pure python. Returns ambiguous parse forests, with methods to extract and modify trees.
+        <div className="text-md md:text-2xl text-gray-400">A python package capable of parsing arbitrary user defined context-free grammars.
+          Uses a top-down Earley Parser written in pure python—returns ambiguous parse forests, with methods to extract and modify trees.
         </div>
       </div>
-    </section>
+    </li>
   )
 }
+
+function PersonalSite() {
+  return (
+    <li className="flex justify-center items-center space-x-[15%]">
+      <div className="w-[20%]">
+        <div className="sectionTitle text-3xl text-center mb-4"> LevyCAS</div>
+        <hr className="border-blue-800 mb-2" />
+        <div className="text-md md:text-2xl text-gray-400">A capable computer algebra system written entirely in python,
+          complete with a Pratt Parser for parsing natural language into mathematical expressions. 
+          Comes equipped with operations from calculus and number theory, including symbolic integration and 
+          prime factorization.
+        </div>
+      </div>
+      <Link
+        className="max-w-[600px] max-h-[200px]"
+        href="https://huggingface.co/spaces/ajlevy246/levycas-app"
+        target="_blank"
+      >
+        <Image
+          className="glow glowOnHover h-auto w-auto border-collapse border-[5px] rounded-lg border-solid border-black"
+          src="/levycasdemo.jpg"
+          alt="Screenshot from the LevyCAS demo" 
+          width="1875"
+          height="575"
+        />
+      </Link>
+    </li>
+  )
+}
+
 
 function Projects() {
   function Separator() {
     return (
-      <li><hr className="w-[15%] justify-self-center border-blue-800"/></li>
+      <li><hr className="w-[300px] max-w-[300px] justify-self-center border-blue-800"/></li>
     )
   }
 
@@ -106,10 +136,11 @@ function Projects() {
     <section id="Projects">
       <div className="sectionTitle text-5xl text-center mb-[5%] background"> Projects </div>
       <ul className="space-y-20">
-        <li><LevyCAS /></li>
+        <LevyCAS />
         <Separator />
-        <li><EarlerParser /></li>
+        <EarleyParser />
         <Separator />
+        <PersonalSite />
       </ul>
     </section>
   )
@@ -117,13 +148,20 @@ function Projects() {
 
 export default function Home() {
   return (
-    <main className="mx-[10%]">
-      <section className="mt-[10%]">
+    <main>
+      <Image
+        src="/introbackground.jpg"
+        alt="View from Stowe Mountain Resort"
+        height="8000"
+        width="6000"
+        className="min-w-screen h-screen"
+      />
+      <section className="mt-[10%] mx-[10%]">
       <Intro />
       <div id="gallery" className="mt-[10%]">
       <RollingGallery
         autoplay={true}
-        pauseOnHover={true}
+        pauseOnHover={false}
         images={[
           "/gallery/gallery1.jpg",
           "/gallery/gallery2.jpg",
