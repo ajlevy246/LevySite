@@ -13,9 +13,14 @@
 }
 
 html, body {
-  background: var(--background);
+  /* background: var(--background); */
   color: var(--foreground);
   font-family: var(--font-roboto-condensed), Arial, Helvetica, sans-serif;
+}
+
+.gradBackground {
+  background-origin: content-box;
+  background: var(--background);
 }
 
 .glowOnHover {

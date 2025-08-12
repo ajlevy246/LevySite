@@ -3,8 +3,9 @@ import TextType from "../blocks/TextAnimations/TextType/TextType"
 import TiltedCard from '@/blocks/Components/TiltedCard/TiltedCard';
 import RollingGallery from "@/blocks/Components/RollingGallery/RollingGallery";
 import Link from "next/link";
+import HeroIntro from "./hero";
 
-function Intro() {
+function About() {
   return (
     <section className="hidden sm:flex flex-cols justify-center space-x-[15%]">
       <div className="pt-[5%] max-w-md">
@@ -77,7 +78,7 @@ function EarleyParser() {
         target="_blank"
       >
         <Image
-          className="glow glowOnHover h-auto w-auto border-collapse border-[5px] rounded-lg border-solid border-black"
+          className="glowOnHover h-auto w-auto border-collapse border-[5px] rounded-lg border-solid border-black"
           src="/levycasdemo.jpg"
           alt="Screenshot from the LevyCAS demo" 
           width="1875"
@@ -124,7 +125,6 @@ function PersonalSite() {
   )
 }
 
-
 function Projects() {
   function Separator() {
     return (
@@ -134,7 +134,7 @@ function Projects() {
 
   return (
     <section id="Projects">
-      <div className="sectionTitle text-5xl text-center mb-[5%] background"> Projects </div>
+      <div className="sectionTitle text-5xl text-center mb-[5%]"> Projects </div>
       <ul className="space-y-20">
         <LevyCAS />
         <Separator />
@@ -149,15 +149,9 @@ function Projects() {
 export default function Home() {
   return (
     <main>
-      <Image
-        src="/introbackground.jpg"
-        alt="View from Stowe Mountain Resort"
-        height="8000"
-        width="6000"
-        className="min-w-screen h-screen"
-      />
-      <section className="mt-[10%] mx-[10%]">
-      <Intro />
+      <HeroIntro />
+      <section className="gradBackground px-[10%] pt-[10%]">
+      <About />
       <div id="gallery" className="mt-[10%]">
       <RollingGallery
         autoplay={true}

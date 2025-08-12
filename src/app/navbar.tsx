@@ -85,25 +85,29 @@ export default function Navbar() {
     return (
         <header className="sticky top-0">
             <nav
-                className="w-screen flex flex-row items-center justify-between fixed top-0"
+                className="w-screen fixed top-0"
+                style= {{
+                    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0))`
+                }}
             >
-            <Link href={"/"}>
-            <Image
-                className="header-elem rounded-full object-cover w-[80px] h-[80px] m-4"
-                src="/me.jpg"
-                width={80}
-                height={80}
-                alt="Picture of me!"
-            />
-            </Link>
-            <div></div>
-            <div>
-                <ul className="list-none flex justify-right m-0 p-0 mt-5 mr-5 mb-10">
-                    <NavItem title="Contact" href="mailto:ajlevy246@gmail.com" />
-                    <NavItem title="Projects" href="/#Projects" />
-                    <NavItem title="Resume" href="/resume.pdf" />
-                </ul>
-            </div>
+                <section className="flex flex-row items-center justify-between">
+                    <Link href={"/"}>
+                    <Image
+                        className="glow glowOnHover border-black border-[2px] header-elem rounded-full object-cover object-right w-[80px] h-[80px] m-4"
+                        src="/me.jpg"
+                        width={4000}
+                        height={3000}
+                        alt="Picture of me!"
+                    />
+                    </Link>
+                    <div>
+                        <ul className="list-none flex justify-right m-0 p-0 mt-5 mr-5 mb-10">
+                            <NavItem title="Contact" href="mailto:ajlevy246@gmail.com" />
+                            <NavItem title="Projects" href="/#Projects" />
+                            <NavItem title="Resume" href="/resume.pdf" />
+                        </ul>
+                    </div>
+                </section>
             </nav>
         </header>
   );
