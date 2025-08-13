@@ -90,16 +90,17 @@ export default function Navbar() {
                     backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0))`
                 }}
             >
-                <section className="flex flex-row items-center justify-between">
-                    <Link href={"/"}>
-                    <Image
-                        className="glow glowOnHover border-black border-[2px] header-elem rounded-full object-cover object-right w-[80px] h-[80px] m-4"
-                        src="/me.jpg"
-                        width={4000}
-                        height={3000}
-                        alt="Picture of me!"
-                    />
-                    </Link>
+                <section className="flex flex-row items-center justify-center space-x-[30%]">
+                    {/* <Link href={"/"}>
+                        <Image
+                            className="glow glowOnHover border-black border-[2px] header-elem rounded-full object-cover object-right w-[80px] h-[80px] m-4"
+                            src="/me.jpg"
+                            width={4000}
+                            height={3000}
+                            alt="Picture of me!"
+                        />
+                    </Link> */}
+                    <div className="sectionTitle ml-5 text-5xl">Alex Levy</div>
                     <div>
                         <ul className="list-none flex justify-right m-0 p-0 mt-5 mr-5 mb-10">
                             <NavItem title="Contact" href="mailto:ajlevy246@gmail.com" />

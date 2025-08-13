@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="antialiased leading-tight">
       <body>
-        <Navbar />
+        {/* <Navbar /> */}
         <main>{children}</main>
         <Footer />
       </body>
