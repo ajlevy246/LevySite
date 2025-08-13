@@ -44,7 +44,8 @@ export default function HeroIntro() {
                 height="3024"
                 className="backgroundGlow rounded-full border-black border-[7px] object-cover object-right w-[300px] h-[300px]"
             />
-            <div className="sectionTitle text-white text-9xl">Alex Levy</div>
+            <div className="sectionTitle text-9xl">Alex Levy</div>
+            <div className="sectionTitle  italic text-4xl">ajlevy246@gmail.com • Virginia Tech • Olney, MD</div>
             <div className="flex flex-row flex-wrap gap-10 items-center justify-center text-5xl">
                 <LinkBarItem image={<BiLogoLinkedinSquare />} href="https://www.linkedin.com/in/alexlevy246" />
                 <LinkBarItem image={<FaGithub />} href="https://github.com/ajlevy246" />

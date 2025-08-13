@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: "Personal Webpage - Alex Levy",
 };
 
-import Navbar from "./navbar";
+// import Navbar from "./navbar";
 import Footer from "./footer";
 
 export default function RootLayout({
