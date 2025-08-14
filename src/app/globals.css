@@ -30,7 +30,6 @@ html, body {
 .glowOnHover:hover {
     transform: scale(1.05);
     box-shadow: 0 0 16px 4px #3b82f6;
-    color: #fff;
 }
 
 .sectionTitle {

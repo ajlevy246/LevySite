@@ -34,7 +34,7 @@ export default function HeroIntro() {
             <div
             className="z-[-1] h-[100vh] w-screen bg-cover bg-center fixed top-0"
             style= {{
-                backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0)), url('/introbackground.jpg')`
+                backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), url('/introbackground.jpg')`
             }}
             />
             <div className='h-[100vh] flex flex-col space-y-[35px] justify-center items-center'>
