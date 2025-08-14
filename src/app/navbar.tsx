@@ -62,7 +62,7 @@ export default function Navbar() {
                         transition={{ duration: 0.3, ease: "easeOut" }}
                     >
                         <ul className="contents">
-                            <NavItem title="Contact" href="mailto:ajlevy246@gmail.com" />
+                            <NavItem title="Education" href="/#Education" />
                             <NavItem title="Projects" href="/#Projects" />
                             <NavItem title="Resume" href="/resume.pdf" />
                         </ul>
