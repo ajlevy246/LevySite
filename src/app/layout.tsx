@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: "Personal Webpage - Alex Levy",
 };
 
-// import Navbar from "./navbar";
+import Navbar from "./navbar";
 import Footer from "./footer";
 
 export default function RootLayout({
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="antialiased leading-tight">
       <body>
-        {/* <Navbar /> */}
+        <Navbar />
         <main>{children}</main>
         <Footer />
       </body>
