@@ -1,4 +1,14 @@
-.navbarItem {
+.navItems li {
+    transition: transform 0.2s;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    position: relative;
+    overflow: hidden;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-transform: capitalize;
+    color: rgb(243, 244, 246);
+    text-decoration: none;
     text-shadow: 0 0 16px #2b82f6;
     backdrop-filter: blur(12px); /* 'md' blur in Tailwind is 12px */
     background-color: rgba(255, 255, 255, 0.15);
@@ -9,12 +19,18 @@
     margin: 10;
 }
 
-li.navbarItem {
-    transition: transform 0.2s;
-}
-
-li.navbarItem:hover {
+.navItems li:hover {
     transform: scale(1.1) translateY(-0.25rem);
     background-color: #3b82f6;
     box-shadow: 0 0 16px 1px #3b82f6;
+}
+
+.navItems Link {
+    display: inline-flex;
+}
+
+.navExtern {
+    display: inline-flex;
+    font-weight: bold;
+    gap: 5px;
 }

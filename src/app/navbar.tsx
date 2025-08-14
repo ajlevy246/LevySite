@@ -2,34 +2,46 @@
 
 import Link from "next/link"
 import React, { ReactElement, useState } from "react";
-import { motion, useScroll, useMotionValueEvent } from "motion/react";
+import { animate, motion, useScroll, useMotionValueEvent } from "motion/react";
 import { MdPictureAsPdf } from "react-icons/md";
+import { LuMails } from "react-icons/lu";
 
 import "./navbar.css";
 
+//TODO: These buttons work only from home page. Alter scrollTo functions to fix this.
 
 type NavItemProps = {
     title: string | ReactElement;
     href: string;
 };
 
-function NavItem({ title, href }: NavItemProps) {
-    const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        if (href.startsWith("/#")) {
-            href = href.replace('/', '');
-            e.preventDefault();
-            const el = document.querySelector(href);
-            if (el instanceof HTMLElement) {
-                el.scrollIntoView({ behavior: "smooth", block: "start" })
-            }
-        }
-    }
-    return (
-        <li className="navbarItem">
-            <Link href={href} onClick={scrollTo} className='text-2xl relative overflow-hidden px-4 inline-flex capitalize text-gray-100 no-underline'>{title}</Link>
-        </li>
-    )
-}
+// function NavItem({ title, href }: NavItemProps) {
+    
+    // const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    //     if (href.startsWith("/#") || href.startsWith("#")) {
+    //         e.preventDefault();
+
+    //         const selector = href.replace("/", "");
+    //         const el = document.querySelector(selector);
+
+    //         if (el instanceof HTMLElement) {
+    //             const targetY = el.getBoundingClientRect().top + window.scrollY;
+
+    //             animate(window.scrollY, targetY, {
+    //                 duration: 0.8, 
+    //                 ease: [0.74, 0.15, 0.3, 0.96],
+    //                 onUpdate: (latest) => window.scrollTo(0, latest),
+    //             })
+    //         }
+    //     }
+    // } 
+
+//     return (
+        // <li className="navbarItem">
+        //     <Link href={href} onClick={scrollTo} className='text-2xl relative overflow-hidden px-4 inline-flex capitalize text-gray-100 no-underline'>{title}</Link>
+        // </li>
+//     )
+// }
 
 export default function Navbar() {
 
@@ -42,8 +54,34 @@ export default function Navbar() {
 
     const scrollHome = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
-        window.scrollTo({ top: 0, behavior: "smooth" })
+        const scrollY = window.scrollY;
+
+        animate(scrollY, 0, {
+            duration: 0.8, 
+            ease: [0.74, 0.15, 0.3, 0.96],
+            onUpdate: (latest) => window.scrollTo(0, latest),
+        })
     }
+
+    const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        const href = e.currentTarget.getAttribute('href');
+        if (href && (href.startsWith("/#") || href.startsWith("#"))) {
+            e.preventDefault();
+
+            const selector = href.replace("/", "");
+            const el = document.querySelector(selector);
+
+            if (el instanceof HTMLElement) {
+                const targetY = el.getBoundingClientRect().top + window.scrollY;
+
+                animate(window.scrollY, targetY, {
+                    duration: 0.8, 
+                    ease: [0.74, 0.15, 0.3, 0.96],
+                    onUpdate: (latest) => window.scrollTo(0, latest),
+                })
+            }
+        }
+    } 
 
     return (
         <header className="sticky top-0 z-999">
@@ -60,7 +98,7 @@ export default function Navbar() {
                 <div className="grid grid-cols-2 my-2">
                     <div className="flex justify-center sectionTitle font-semi-bold flex justify-center items-center">
                         <motion.a
-                            href="/#"
+                            href="/"
                             onClick={scrollHome}
                             className="contents"
                             animate={{
@@ -80,11 +118,12 @@ export default function Navbar() {
                         }}
                         initial={false}
                     >
-                        <ul className="contents">
-                            <NavItem title="about" href="/#about" />
-                            <NavItem title="education" href="/#education" />
-                            <NavItem title="projects" href="/#projects" />
-                            <NavItem title={<>{<MdPictureAsPdf className="text-[1rem] mt-2 mr-2" />}resume</>} href="/resume.pdf" />
+                        <ul className="navItems contents">
+                            <li><Link href="/#about" onClick={scrollTo}>about</Link></li>
+                            <li><Link href="/#education" onClick={scrollTo}>education</Link></li>
+                            <li><Link href="/#projects" onClick={scrollTo}>projects</Link></li>
+                            <li><Link className="navExtern" href="/resume.pdf" onClick={scrollTo}><MdPictureAsPdf className="mt-[5px]"/>resume</Link></li>
+                            <li><Link className="navExtern" href="mailto:ajlevy246@gmail.com" onClick={scrollTo}><LuMails className="mt-[5px]"/>contact</Link></li>
                         </ul>
                     </motion.div>
                 </div>

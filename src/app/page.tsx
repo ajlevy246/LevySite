@@ -151,7 +151,7 @@ export default function Home() {
   return (
     <main>
       <HeroIntro />
-      <section className="gradBackground px-[10%] pt-[10%]">
+      <section id="about" className="gradBackground px-[10%] pt-[10%]">
       <About />
       <div id="gallery" className="mt-[10%]">
       <RollingGallery
@@ -168,7 +168,8 @@ export default function Home() {
         ]}
         />
       </div>
-      <div id="projects" className="mt-[10%]">
+      <div id="projects" />
+      <div className="mt-[10%]">
       <Projects />
       </div>
       </section>
