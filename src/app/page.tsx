@@ -35,6 +35,7 @@ function About() {
             imageHeight="400px"
             imageWidth="300px"
             displayOverlayContent={false}
+            showTooltip={false}
       />
     </section>
   )
