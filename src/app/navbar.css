@@ -1,0 +1,11 @@
+.navbarItem {
+    text-shadow: 0 0 16px #2b82f6;
+}
+
+li.navbarItem {
+    transition: transform 0.2s;
+}
+
+li.navbarItem:hover {
+    transform: scale(1.1) translateY(-0.25rem);
+}
