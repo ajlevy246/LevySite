@@ -24,7 +24,7 @@ function FooterItem({ image, href}: FooterItemProps) {
 
 export default function Footer() {
   return (
-    <div className="p-6 text-white text-center flex flex-col items-center gap-2 fixed bottom-0">
+    <div className="hidden sm:flex flex-col p-6 text-white text-center items-center gap-2 fixed bottom-0">
       <div className="flex flex-row flex-wrap gap-6 items-center justify-center ml-5 mb-3 text-4xl">
         <FooterItem
           image={<BiLogoLinkedinSquare />}

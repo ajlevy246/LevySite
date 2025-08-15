@@ -6,6 +6,10 @@ import { animate, AnimatePresence, motion, useScroll, useMotionValueEvent } from
 import { MdPictureAsPdf } from "react-icons/md";
 import { LuMails } from "react-icons/lu";
 import { FiMenu, FiX } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa";
+import { BiLogoLinkedinSquare } from "react-icons/bi";
+import { CgMail } from "react-icons/cg";
+
 
 import "./navbar.css";
 
@@ -69,7 +73,7 @@ export default function Navbar() {
     }
 
     return (
-        <header className=" z-999">
+        <header className="z-999">
             <motion.nav
                 className="w-screen fixed top-0 z-999"
                 animate={{
@@ -81,11 +85,11 @@ export default function Navbar() {
                 transition={{ duration: 0.3, ease: "easeOut" }}
             >
                 <div className="grid grid-cols-2 my-2">
-                    <div className="flex justify-center items-center sectionTitle font-semi-bold">
+                    {/* Desktop name */}
+                    <div className="hidden sm:flex justify-center items-center sectionTitle font-semi-bold">
                         <motion.a
                             href="/"
                             onClick={scrollHome}
-                            className="hidden sm:contents"
                             animate={{
                                 fontSize: aboveIntro ? "3rem" : "2.2rem",
                                 x: aboveIntro ? 50 : 0
@@ -95,6 +99,31 @@ export default function Navbar() {
                         >
                             Alex Levy
                         </motion.a>
+                    </div>
+
+                    {/* Mobile logos */}
+                    <div className="flex sm:hidden items-center justify-center ml-5 pb-2 text-3xl pt-2 space-x-5">
+                            <Link 
+                                className="navbarIcon transition"
+                                href="https://www.linkedin.com/in/alexlevy246"
+                                target="_blank" rel="noopener noreferrer"
+                            >
+                                    <BiLogoLinkedinSquare />
+                            </Link>
+                            <Link 
+                                className="navbarIcon transition"
+                                href="https://github.com/ajlevy246"
+                                target="_blank" rel="noopener noreferrer"
+                            >
+                                    <FaGithub />
+                            </Link>
+                            <Link 
+                                className="navbarIcon transition"
+                                href="mailto:ajlevy246@gmail.com"
+                                target="_blank" rel="noopener noreferrer"
+                            >
+                                    <CgMail />
+                            </Link>
                     </div>
                     <motion.div
                         className="flex items-center justify-center 2xl:justify-start"
