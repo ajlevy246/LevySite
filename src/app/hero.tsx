@@ -37,7 +37,7 @@ export default function HeroIntro() {
                 backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), url('/introbackground.jpg')`
             }}
             />
-            <div className='h-[100vh] flex flex-col space-y-[35px] justify-center items-center'>
+            <div className='h-[100vh] flex flex-col text-center space-y-[35px] justify-center items-center'>
                 <Image
                     src="/me.jpg"
                     alt="Me"
@@ -47,7 +47,7 @@ export default function HeroIntro() {
                 />
                 <div className="sectionTitle text-9xl">Alex Levy</div>
                 <div className="sectionTitle italic text-4xl pb-[40px]">Computer Science & Discrete Math • Virginia Tech • Olney, MD</div>
-                <div className="flex flex-row flex-wrap gap-10 items-center justify-center text-5xl">
+                <div className="hidden sm:flex flex-row flex-wrap gap-10 items-center justify-center text-5xl">
                     <LinkBarItem image={<BiLogoLinkedinSquare />} href="https://www.linkedin.com/in/alexlevy246" />
                     <LinkBarItem image={<FaGithub />} href="https://github.com/ajlevy246" />
                     <LinkBarItem image={<CgMail />} href="mailto:ajlevy246@gmail.com" />

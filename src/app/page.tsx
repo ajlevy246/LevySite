@@ -7,7 +7,7 @@ import HeroIntro from "./hero";
 
 function About() {
   return (
-    <section className="hidden sm:flex flex-cols justify-center space-x-[15%]">
+    <section className="flex flex-col sm:flex-row justify-center space-x-[15%]">
       <div className="pt-[5%] max-w-md">
         <div className="sectionTitle text-6xl text-white mb-1">Alex Levy</div>
         <TextType
@@ -27,6 +27,7 @@ function About() {
           Check out some of my projects below!
         </div>
       </div>
+      <div className="mt-20 self-center">
       <TiltedCard 
             imageSrc="/me.jpg"
             altText="me in Park City, Utah"
@@ -37,6 +38,7 @@ function About() {
             displayOverlayContent={false}
             showTooltip={false}
       />
+      </div>
     </section>
   )
 }
@@ -149,7 +151,7 @@ function Projects() {
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-full">
       <HeroIntro />
       <section id="about" className="gradBackground px-[10%] pt-[10%]">
       <About />
