@@ -7,9 +7,8 @@ import HeroIntro from "./hero";
 
 function About() {
   return (
-    <section className="flex flex-col sm:flex-row justify-center space-x-[15%]">
+    <section id="about" className="flex flex-col pt-[10%] sm:flex-row justify-center space-x-[15%]">
       <div className="pt-[5%] max-w-md">
-        <div className="sectionTitle text-6xl text-white mb-1">Alex Levy</div>
         <TextType
           className="text-3xl text-gray-300 mb-4"
           text={["Welcome to my personal site!"]}
@@ -153,7 +152,7 @@ export default function Home() {
   return (
     <main className="w-full">
       <HeroIntro />
-      <section id="about" className="gradBackground px-[10%] pt-[10%]">
+      <section className="gradBackground px-[10%]">
       <About />
       <div id="gallery" className="mt-[10%]">
       <RollingGallery

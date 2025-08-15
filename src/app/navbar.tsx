@@ -84,14 +84,15 @@ export default function Navbar() {
                 initial={false}
                 transition={{ duration: 0.3, ease: "easeOut" }}
             >
-                <div className="grid grid-cols-2 my-2">
+                <div className="grid grid-cols-2 items-center my-2">
+                {/* <div className="flex justify-center my-2"> */}
                     {/* Desktop name */}
-                    <div className="hidden sm:flex justify-center items-center sectionTitle font-semi-bold">
+                    <div className="hidden sm:flex items-center ml-[25%] sectionTitle font-semi-bold">
                         <motion.a
                             href="/"
                             onClick={scrollHome}
                             animate={{
-                                fontSize: aboveIntro ? "3rem" : "2.2rem",
+                                fontSize: aboveIntro ? "4rem" : "2.7rem",
                                 x: aboveIntro ? 50 : 0
                             }}
                             initial={false}
@@ -102,7 +103,12 @@ export default function Navbar() {
                     </div>
 
                     {/* Mobile logos */}
-                    <div className="flex sm:hidden items-center justify-center ml-5 pb-2 text-3xl pt-2 space-x-5">
+                    <motion.div 
+                        className="flex sm:hidden items-center justify-center ml-5 pb-2 text-3xl pt-2 space-x-5"
+                        animate={{ scale: aboveIntro ? 1.5 : 1}}
+                        initial={false}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                    >
                             <Link 
                                 className="navbarIcon transition"
                                 href="https://www.linkedin.com/in/alexlevy246"
@@ -124,12 +130,13 @@ export default function Navbar() {
                             >
                                     <CgMail />
                             </Link>
-                    </div>
+                    </motion.div>
                     <motion.div
                         className="flex items-center justify-center 2xl:justify-start"
                         animate={{
                             marginTop: aboveIntro ? "10px" : "0px",
                             scale: aboveIntro ? 1.5 : 1,
+                            x: aboveIntro ? 0 : -275,
                         }}
                         initial={false}
                         transition={{ duration: 0.3, ease: "easeOut" }}
@@ -144,7 +151,7 @@ export default function Navbar() {
                         </ul>
 
                         {/* Mobile hamburger menu */}
-                        <button className="navItems 2xl:hidden cursor-pointer ml-20" onClick={toggleMenu}>
+                        <button className="navItems 2xl:hidden cursor-pointer pl-20" onClick={toggleMenu}>
                             {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
                         </button>
                     </motion.div>

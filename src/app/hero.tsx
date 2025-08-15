@@ -37,13 +37,13 @@ export default function HeroIntro() {
                 backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), url('/introbackground.jpg')`
             }}
             />
-            <div className='h-[100vh] flex flex-col text-center space-y-[35px] mt-15 sm:mt-0 justify-center items-center'>
+            <div className='scale-80 sm:scale-none h-[100vh] flex flex-col text-center space-y-[35px] md:mt-0 justify-center items-center'>
                 <Image
-                    src="/me.jpg"
+                    src="/profile.jpg"
                     alt="Me"
-                    width="4032"
-                    height="3024"
-                    className="backgroundGlow rounded-full border-black border-[7px] object-cover object-right w-[300px] h-[300px]"
+                    width="3000"
+                    height="3000"
+                    className="backgroundGlow rounded-full  border-black border-[7px] object-cover object-bottom-right w-[300px] h-[300px]"
                 />
                 <div className="sectionTitle text-9xl">Alex Levy</div>
                 <div className="sectionTitle italic text-4xl pb-[40px]">Computer Science & Discrete Math • Virginia Tech • Olney, MD</div>
