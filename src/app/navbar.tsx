@@ -136,7 +136,6 @@ export default function Navbar() {
                         animate={{
                             marginTop: aboveIntro ? "10px" : "0px",
                             scale: aboveIntro ? 1.5 : 1,
-                            x: aboveIntro ? 0 : -275,
                         }}
                         initial={false}
                         transition={{ duration: 0.3, ease: "easeOut" }}
