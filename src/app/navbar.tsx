@@ -122,7 +122,7 @@ export default function Navbar() {
                 </div>
                 <motion.div
                     className="border-b-5 mb-0 h-0 pb-0 justify-self-center"
-                    animate={{ width: (aboveIntro) ? "0%" : "100%"}}
+                    animate={{ width: (menuOpen || aboveIntro) ? "0%" : "100%"}}
                     initial={false}
                     transition={{ duration: 0.2, ease: "easeIn" }}
                 />
@@ -131,20 +131,20 @@ export default function Navbar() {
                 <AnimatePresence>
                     {menuOpen && (
                         <motion.ul
-                            className="flex flex-col pr-12 items-end gap-4 overflow-hidden 2xl:hidden bg-[rgba(25,34,59,0.9)]"
+                            className="navItemsMobile flex flex-col pr-12 pl-[5%] text-xl gap-4 overflow-hidden 2xl:hidden bg-[rgba(25,34,59,0.9)]"
                             initial={{ opacity: 0, y: 0, height: 0 }}
                             animate={{ opacity: 1, y: 0, height: "auto" }}
                             exit={{ opacity: 0, y: 0, height: 0 }}
-                            transition={{ duration: 1, ease: "easeOut" }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
                         >
-                            {/* Framer motion ignores padding when animating, so empty li's are placed here for smoothing the animation */}
-                            <li />
-                            <li><Link href="/#about" onClick={closeAndScroll}>about</Link></li>
-                            <li><Link href="/#education" onClick={closeAndScroll}>education</Link></li>
-                            <li><Link href="/#projects" onClick={closeAndScroll}>projects</Link></li>
-                            <li><Link className="navExtern" href="/resume.pdf"><MdPictureAsPdf className="mt-[2.5px]"/>resume</Link></li>
-                            <li><Link className="navExtern" href="mailto:ajlevy246@gmail.com"><LuMails className="mt-[3px]"/>contact</Link></li>
-                            <li />
+                            {/* Framer motion ignores padding when animating, so empty divs are placed here for smoothing the animation */}
+                            <div />
+                            <Link href="/#about" onClick={closeAndScroll}><li>about</li></Link>
+                            <Link href="/#education" onClick={closeAndScroll}><li>education</li></Link>
+                            <Link href="/#projects" onClick={closeAndScroll}><li>projects</li></Link>
+                            <Link href="/resume.pdf"><li className="navExtern"><MdPictureAsPdf className="mt-[2.5px]"/>resume</li></Link>
+                            <Link href="mailto:ajlevy246@gmail.com"><li className="navExtern"><LuMails className="mt-[3px]"/>contact</li></Link>
+                            <div />
                         </motion.ul>
                     )}
                 </AnimatePresence>

@@ -37,3 +37,31 @@
     font-weight: bold;
     gap: 5px;
 }
+
+.navItemsMobile li {
+    transition: transform 0.2s;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    position: relative;
+    overflow: hidden;
+    padding-top: 0.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 1rem;
+    text-transform: capitalize;
+    color: rgb(243, 244, 246);
+    text-shadow: 0 0 16px #2b82f6;
+    margin: 10;
+    max-height: 33;
+    width: 65vw;
+    border-radius: 5px;
+}
+
+.navItemsMobile li:hover {
+    transform: scale(1.1) translateY(-0.25rem);
+    background-color: #3b82f6;
+    box-shadow: 0 0 16px 1px #3b82f6;
+}
+
+.navItemsMobile Link {
+    display: contents;
+}
