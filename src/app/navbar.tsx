@@ -87,7 +87,7 @@ export default function Navbar() {
                 <div className="grid grid-cols-2 items-center my-2">
                 {/* <div className="flex justify-center my-2"> */}
                     {/* Desktop name */}
-                    <div className="hidden sm:flex items-center ml-[25%] sectionTitle font-semi-bold">
+                    <div className="hidden md:flex items-center ml-[25%] sectionTitle font-semi-bold">
                         <motion.a
                             href="/"
                             onClick={scrollHome}
@@ -104,7 +104,7 @@ export default function Navbar() {
 
                     {/* Mobile logos */}
                     <motion.div 
-                        className="flex sm:hidden items-center justify-center ml-5 pb-2 text-3xl pt-2 space-x-5"
+                        className="flex md:hidden items-center justify-center ml-5 pb-2 text-3xl pt-2 space-x-5"
                         animate={{ scale: aboveIntro ? 1.5 : 1}}
                         initial={false}
                         transition={{ duration: 0.3, ease: "easeOut" }}
