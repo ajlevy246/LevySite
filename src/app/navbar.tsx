@@ -13,13 +13,6 @@ import { CgMail } from "react-icons/cg";
 
 import "./navbar.css";
 
-//TODO: These buttons work only from home page. Alter scrollTo functions to fix this.
-
-type NavItemProps = {
-    title: string | ReactElement;
-    href: string;
-};
-
 export default function Navbar() {
 
     // Animation state
@@ -140,13 +133,13 @@ export default function Navbar() {
                         initial={false}
                         transition={{ duration: 0.3, ease: "easeOut" }}
                     >
-                        {/* Desktop menu */}
-                        <ul className="hidden 2xl:flex navItems contents">
+                        {/* Desktop navbar */}
+                        <ul className="hidden 2xl:flex navItems">
                             <li><Link href="/#about" onClick={scrollTo}>about</Link></li>
                             <li><Link href="/#education" onClick={scrollTo}>education</Link></li>
                             <li><Link href="/#projects" onClick={scrollTo}>projects</Link></li>
-                            <li><Link className="navExtern" href="/resume.pdf" onClick={scrollTo}><MdPictureAsPdf className="mt-[5px]"/>resume</Link></li>
-                            <li><Link className="navExtern" href="mailto:ajlevy246@gmail.com" onClick={scrollTo}><LuMails className="mt-[5px]"/>contact</Link></li>
+                            <li><Link className="font-bold" href="/resume.pdf" onClick={scrollTo}><MdPictureAsPdf className="mt-[5px]"/>resume</Link></li>
+                            <li><Link className="font-bold" href="mailto:ajlevy246@gmail.com" onClick={scrollTo}><LuMails className="mt-[5px]"/>contact</Link></li>
                         </ul>
 
                         {/* Mobile hamburger menu */}
@@ -175,11 +168,11 @@ export default function Navbar() {
                         >
                             {/* Framer motion ignores padding when animating, so empty divs are placed here for smoothing the animation */}
                             <div />
-                            <Link href="/#about" onClick={closeAndScroll}><li>about</li></Link>
-                            <Link href="/#education" onClick={closeAndScroll}><li>education</li></Link>
-                            <Link href="/#projects" onClick={closeAndScroll}><li>projects</li></Link>
-                            <Link href="/resume.pdf"><li className="navExtern"><MdPictureAsPdf className="mt-[2.5px]"/>resume</li></Link>
-                            <Link href="mailto:ajlevy246@gmail.com"><li className="navExtern"><LuMails className="mt-[3px]"/>contact</li></Link>
+                            <li><Link href="/#about" onClick={closeAndScroll}>about</Link></li>
+                            <li><Link href="/#education" onClick={closeAndScroll}>education</Link></li>
+                            <li><Link href="/#projects" onClick={closeAndScroll}>projects</Link></li>
+                            <li><Link className="navExtern" href="/resume.pdf"><MdPictureAsPdf className="mt-[2.5px]"/>resume</Link></li>
+                            <li><Link className="navExtern" href="mailto:ajlevy246@gmail.com"><LuMails className="mt-[3px]"/>contact</Link></li>
                             <div />
                         </motion.ul>
                     )}

@@ -6,7 +6,7 @@ export default function About() {
     <section id="about" className="flex flex-col pt-[25%] md:pt-[8%] sm:flex-row justify-center space-x-[15%]">
       <div className="pt-[5%] max-w-md">
         <TextType
-          className="text-3xl text-gray-300 mb-4 min-h-[75px] sm:min-h-auto"
+          className="text-5xl text-gray-300 mb-4 min-h-[75px] sm:min-h-auto"
           text={["Welcome to my personal site!"]}
           typingSpeed={75}
           deletingSpeed={0}
@@ -22,7 +22,7 @@ export default function About() {
           Check out some of my projects below!
         </div>
       </div>
-      <div className="mt-20 self-center">
+      {/* <div className="mt-20 self-center">
       <TiltedCard 
             imageSrc="/me.jpg"
             altText="me in Park City, Utah"
@@ -33,7 +33,7 @@ export default function About() {
             displayOverlayContent={false}
             showTooltip={false}
       />
-      </div>
+      </div> */}
     </section>
   )
 }

@@ -1,41 +1,36 @@
 .navItems li {
-    transition: transform 0.2s;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    position: relative;
-    overflow: hidden;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 2.5rem;
-    text-transform: capitalize;
-    color: rgb(243, 244, 246);
-    text-decoration: none;
-    text-shadow: 0 0 16px #2b82f6;
-    backdrop-filter: blur(12px); /* 'md' blur in Tailwind is 12px */
-    background-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
-                0 4px 6px -4px rgba(0, 0, 0, 0.2); /* shadow-lg + black/20 */
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 0.5rem;
-    margin: 10;
-    max-height: 33;
+    margin: 10px;
 }
 
-.navItems li:hover {
+.navItems li > a {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem; 
+    text-decoration: none;
+    color: rgb(243, 244, 246);
+    text-transform: capitalize;
+    text-shadow: 0 0 16px #2b82f6;
+
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    padding: 1.25rem 1rem;
+    backdrop-filter: blur(12px); 
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
+                0 4px 6px -4px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    overflow: hidden;
+    max-height: 33px;
+}
+
+.navItems li > a:hover {
     transform: scale(1.1) translateY(-0.25rem);
     background-color: #3b82f6;
     box-shadow: 0 0 16px 1px #3b82f6;
-}
-
-.navItems Link {
-    display: inline-flex;
-}
-
-.navExtern {
-    display: inline-flex;
-    font-weight: bold;
-    gap: 5px;
 }
 
 .navItemsMobile li {
@@ -50,8 +45,8 @@
     text-transform: capitalize;
     color: rgb(243, 244, 246);
     text-shadow: 0 0 16px #2b82f6;
-    margin: 10;
-    max-height: 33;
+    margin: 10px;
+    max-height: 33px;
     width: 65vw;
     border-radius: 5px;
 }
@@ -60,10 +55,6 @@
     transform: scale(1.1) translateY(-0.25rem);
     background-color: #3b82f6;
     box-shadow: 0 0 16px 1px #3b82f6;
-}
-
-.navItemsMobile Link {
-    display: contents;
 }
 
 .navbarIcon {
