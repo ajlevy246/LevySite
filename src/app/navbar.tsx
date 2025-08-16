@@ -155,6 +155,7 @@ export default function Navbar() {
                         </button>
                     </motion.div>
                 </div>
+                {/* Bottom border */}
                 <motion.div
                     className="border-b-5 mb-0 h-0 pb-0 justify-self-center"
                     animate={{ width: (menuOpen || aboveIntro) ? "0%" : "100%"}}
@@ -167,9 +168,9 @@ export default function Navbar() {
                     {menuOpen && (
                         <motion.ul
                             className="navItemsMobile flex flex-col pr-12 pl-[5%] text-xl gap-4 overflow-hidden 2xl:hidden bg-[rgba(25,34,59,0.9)]"
-                            initial={{ opacity: 0, y: 0, height: 0 }}
-                            animate={{ opacity: 1, y: 0, height: "auto" }}
-                            exit={{ opacity: 0, y: 0, height: 0 }}
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.2, ease: "easeOut" }}
                         >
                             {/* Framer motion ignores padding when animating, so empty divs are placed here for smoothing the animation */}
