@@ -1,7 +1,6 @@
 'use client'
 
-import { AnimatePresence, motion } from "motion/react";
-import { ReactHTMLElement } from "react";
+import { motion } from "motion/react";
 
 import "./education.css";
 

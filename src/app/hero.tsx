@@ -6,12 +6,13 @@ import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { BiLogoLinkedinSquare } from "react-icons/bi";
 import { CgMail } from "react-icons/cg";
+import { ReactElement } from "react";
 
 
 export default function HeroIntro() {
 
     type LinkBarProps = {
-        image: any;
+        image: ReactElement;
         href: string;
     };
 

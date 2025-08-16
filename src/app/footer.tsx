@@ -3,9 +3,10 @@ import { BiLogoLinkedinSquare } from "react-icons/bi";
 import { CgMail } from "react-icons/cg";
 
 import "./footer.css";
+import { ReactElement } from "react";
 
 type FooterItemProps = {
-  image: any;
+  image: ReactElement;
   href: string;
 };
 

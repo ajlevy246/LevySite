@@ -15,8 +15,8 @@ export default function About() {
           initialDelay={0}
         />
         <div className="text-2xl text-gray-400">
-          Hi there! I'm a senior at Virginia Tech studying computer science and discrete math. 
-          I'm currently studying the applications of graph theory in machine learning. 
+          Hi there! I&apos;m a senior at Virginia Tech studying computer science and discrete math. 
+          I&apos;m currently studying the applications of graph theory in machine learning. 
           I love all things skiing, eating, and math (in that order). 
           I recently attended PCMI, a three-week math conference in Park City, Utah, centered on extremal combinatorics. 
           Check out some of my projects below!
