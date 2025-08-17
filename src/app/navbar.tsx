@@ -77,8 +77,7 @@ export default function Navbar() {
                 initial={false}
                 transition={{ duration: 0.3, ease: "easeOut" }}
             >
-                <div className="grid grid-cols-2 items-center my-2">
-                {/* <div className="flex justify-center my-2"> */}
+                <div className="flex justify-between mx-20 md:mx-auto md:grid md:grid-cols-2 items-center my-2">
                     {/* Desktop name */}
                     <div className="hidden md:flex items-center ml-[25%] sectionTitle font-semi-bold">
                         <motion.a
@@ -143,7 +142,7 @@ export default function Navbar() {
                         </ul>
 
                         {/* Mobile hamburger menu */}
-                        <button className="navItems 2xl:hidden cursor-pointer pl-20" onClick={toggleMenu}>
+                        <button className="2xl:hidden cursor-pointer pl-20 pb-2" onClick={toggleMenu}>
                             {menuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
                         </button>
                     </motion.div>
