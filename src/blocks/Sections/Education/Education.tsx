@@ -54,7 +54,7 @@ function SherwoodHighSchool() {
     return(
         <motion.div
             className="event"
-            initial={{ opacity: 0, y: 185 }}
+            initial={{ opacity: 0, y: 75 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: "easeOut" }}
