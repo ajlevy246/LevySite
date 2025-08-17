@@ -1,6 +1,6 @@
 
 import HeroIntro from "./hero";
-import About from "@/blocks/Sections/About";
+import About from "@/blocks/Sections/About/About";
 import RollingGallery from "@/blocks/Components/RollingGallery/RollingGallery";
 import Education from "@/blocks/Sections/Education/Education";
 import Projects from "@/blocks/Sections/Projects";

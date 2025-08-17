@@ -1,6 +1,8 @@
 import TextType from "@/blocks/TextAnimations/TextType/TextType";
 import TiltedCard from "@/blocks/Components/TiltedCard/TiltedCard";
 
+import "./about.css";
+
 export default function About() {
   return (
     <section id="about" className="flex flex-col pt-[25%] md:pt-[8%] sm:flex-row justify-center space-x-[15%]">
