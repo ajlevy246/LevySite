@@ -86,6 +86,7 @@ export default function Education() {
                 viewport={{ once: true }}
                 transition={{ duration: 1, ease: "easeOut" }}
             >
+                {/* Timeline Cards */}
                 <VirginiaTech />
                 <MontgomeryCollege />
                 <SherwoodHighSchool />

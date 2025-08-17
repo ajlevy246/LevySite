@@ -1,9 +1,35 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import "./projects.css";
+
+function LevyCASCard() {
+  return (
+    <div className="projectCard border-white border-[5px] w-[25vw]">
+
+    </div>
+  )
+}
+
+function PersonalSiteCard() {
+  return (
+    <div className="projectCard border-white border-[5px] w-[25vw]">
+
+    </div>
+  )
+}
+
+function EarleyParserCard() {
+  return (
+    <div className="projectCard border-white border-[5px] w-[25vw]">
+
+    </div>
+  )
+}
+
 function LevyCAS() {
   return (
-    <li className="flex justify-center items-center space-x-[15%]">
+    <div className="flex justify-center items-center space-x-[15%]">
       <div className="w-[20%]">
         <div className="sectionTitle text-3xl text-center mb-4"> LevyCAS</div>
         <hr className="border-blue-800 mb-2" />
@@ -26,7 +52,7 @@ function LevyCAS() {
           height="575"
         />
       </Link>
-    </li>
+    </div>
   )
 }
 
@@ -94,16 +120,13 @@ export default function Projects() {
   }
 
   return (
-    // <section id="projects" className="pt-[10%]">
-    <section id="projects" className="pt-[25%] md:pt-[8%]">
+    <section id="projects" className="min-h-screen pt-[25%] md:pt-[8%]">
       <div className="sectionTitle text-5xl text-center mb-[5%]"> Projects </div>
-      <ul className="space-y-20">
-        <LevyCAS />
-        <Separator />
-        <EarleyParser />
-        <Separator />
-        <PersonalSite />
-      </ul>
-    </section>
+      <div className="flex flex-col md:flex-row md:space-x-[15%]">
+        <LevyCASCard />
+        <PersonalSiteCard />
+        <EarleyParserCard />
+      </div>
+    </section> 
   )
 }
