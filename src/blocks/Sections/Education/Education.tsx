@@ -31,10 +31,10 @@ function MontgomeryCollege() {
     return (
         <motion.div
             className="event"
-            initial={{ opacity: 0, y: 130 }}
+            initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.25, ease: "easeOut" }}
+            transition={{ duration: 1.15, ease: "easeOut" }}
         >
             <h1>Montgomery College - <i>Rockville, MD</i></h1>
             <h3>A.S. Mathematics | Dual Enrollment | 2021 - 2023 </h3>
@@ -54,10 +54,10 @@ function SherwoodHighSchool() {
     return(
         <motion.div
             className="event"
-            initial={{ opacity: 0, y: 75 }}
+            initial={{ opacity: 0, y: 125 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
         >
             <h1>Sherwood High School - <i>Sandy Spring, MD</i></h1>
             <h3>High School Diploma | 2021 - 2023 </h3>
@@ -80,7 +80,7 @@ export default function Education() {
             
             {/* Timeline */}
             <motion.div
-                className="border-l-[5px] rounded-lg border-gray-400 mt-[15%] pt-[5%] pb-[0.65%] lg:mt-0 mx-none lg:mx-[10%]"
+                className="border-l-[5px] rounded-lg border-gray-400 mt-[15%] pt-[5%] pb-[0.65%] lg:mt-0 mx-none 2xl:ml-[15%]"
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
