@@ -1,7 +1,12 @@
+// Component Imports
 import TextType from "@/blocks/TextAnimations/TextType/TextType";
 import TiltedCard from "@/blocks/Components/TiltedCard/TiltedCard";
 
+// Style Imports
 import "./about.css";
+
+// Image Imports
+import me from "@/assets/me.jpg";
 
 export default function About() {
   return (
@@ -26,7 +31,7 @@ export default function About() {
       </div>
       <div className="hidden lg:flex mt-20 self-center">
       <TiltedCard 
-            imageSrc="/me.jpg"
+            imageSrc={me.src}
             altText="me in Park City, Utah"
             containerHeight="400px"
             containerWidth="300px"

@@ -1,6 +1,7 @@
 
 // TODO: PLACE FOOTER IN MIDDLE OF HERO INTRO, THEN MOVE INTO FOOTER AS ANIMATION ON SCROLL
 
+// Component Imports
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
@@ -8,6 +9,9 @@ import { BiLogoLinkedinSquare } from "react-icons/bi";
 import { CgMail } from "react-icons/cg";
 import { ReactElement } from "react";
 
+// Image imports
+import profile from "@/assets/profile.jpg";
+import introbg from "@/assets/introbackground.jpg";
 
 export default function HeroIntro() {
 
@@ -35,12 +39,12 @@ export default function HeroIntro() {
             <div
             className="z-[-1] h-[100vh] w-screen bg-cover bg-center fixed top-0"
             style= {{
-                backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), url('/introbackground.jpg')`
+                backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), url(${introbg.src})`
             }}
             />
             <div className='scale-80 sm:scale-none h-[100vh] flex flex-col text-center space-y-[35px] md:mt-0 justify-center items-center'>
                 <Image
-                    src="/profile.jpg"
+                    src={profile}
                     alt="Me"
                     width="3000"
                     height="3000"
