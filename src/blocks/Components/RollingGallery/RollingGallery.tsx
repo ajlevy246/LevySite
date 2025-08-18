@@ -5,7 +5,7 @@
 */
 
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import {
   motion,
   useMotionValue,
@@ -31,7 +31,7 @@ const IMGS: string[] = [
 interface RollingGalleryProps {
   autoplay?: boolean;
   pauseOnHover?: boolean;
-  images?: string[];
+  images?: (string | StaticImageData)[];
 }
 
 const RollingGallery: React.FC<RollingGalleryProps> = ({
