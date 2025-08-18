@@ -1,0 +1,23 @@
+/* Project Card */
+.projectCard {
+    border: 5px solid #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px #3b82f6;
+
+    min-width: 20vw;
+
+    /* transition: transform 0.2s, box-shadow 0.2s; */
+    cursor: pointer;
+}
+
+/* .projectCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 16px 4px #3b82f6;
+} */
+
+/* Project Title */
+.projectCard > h1 {
+    white-space: nowrap;
+    font-size: 1.75rem;
+    text-align: center;
+}
