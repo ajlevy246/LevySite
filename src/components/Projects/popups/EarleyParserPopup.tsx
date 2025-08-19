@@ -30,7 +30,18 @@ export default function EarleyParserPopup({ isOpen, setIsOpen }: LevyCASPopupPro
             >
                 <h1>Earley Parser</h1>
                 <p className="pb-[200px]">Python parser for user-defined context-free grammar.</p>
-                <button className="cursor-pointer glow" onClick={() => setIsOpen(false)}>Close</button>
+                <button onClick={() => setIsOpen(false)}>Close</button>
             </motion.div>
-        </motion.div>)
+        </motion.div>
+    )
 }
+
+// Desc:
+
+// function EarleyParser() {
+//   return (
+//     <div>A python package capable of parsing arbitrary user defined context-free grammars.
+//       Uses a top-down Earley Parser written in pure python—returns ambiguous parse forests, with methods to extract and modify trees.
+//     </div>
+//   )
+// }

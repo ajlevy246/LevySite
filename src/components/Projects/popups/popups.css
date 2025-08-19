@@ -5,11 +5,19 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  padding-right: 1em;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+}
+
+/* Responsive layout: > small */
+@media (min-width: 640px) {
+  .projectPopup {
+    padding-right: 0;
+  }
 }
 
 /* Popup content box */
@@ -19,9 +27,66 @@
   border-width: 5px;
   border-color: #000000;
   padding: 2rem;
-  max-width: 600px;
+  max-width: 1200px;
   width: 90%;
+  max-height: 800px;
+  height: 80%;
   color: white;
   box-shadow: 0 0 12px #3b82f6;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Project title */
+.projectBox h1 {
+  margin-left: 1rem;
+  margin-top: 1rem;
+
+  font-size: 3rem;
+  font-weight: bold;
+  white-space: nowrap;
+
+  text-shadow: 0 0 16px #3b82f6;
+}
+
+/* Project Description */
+.projectBox p {
+    font-size: 1rem;
+}
+
+/* Close Button */
+.projectBox button {
+    align-self: center;
+    width: 100px;
+
+    color: rgb(243, 244, 246);
+    text-transform: capitalize;
+    text-shadow: 0 0 16px #2b82f6;
+
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    padding: 0rem 1rem;
+    backdrop-filter: blur(12px); 
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
+                0 4px 6px -4px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    overflow: hidden;
+    max-height: 33px;
+
+    cursor: pointer;
+}
+
+.projectBox button:hover {
+    transform: scale(1.05) translateY(-0.1rem);
+    background-color: #3b82f6;
+    box-shadow: 0 0 8px 1px #3b82f6;
 }

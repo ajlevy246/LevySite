@@ -133,35 +133,6 @@ function EarleyParserCard() {
   )
 }
 
-// function LevyCAS() {
-//   return (
-//     <div className="text-md md:text-2xl text-gray-400">A capable computer algebra system written entirely in python,
-//       complete with a Pratt Parser for parsing natural language into mathematical expressions. 
-//       Comes equipped with operations from calculus and number theory, including symbolic integration and 
-//       prime factorization.
-//     </div>
-//   )
-// }
-
-// function EarleyParser() {
-//   return (
-//     <div>A python package capable of parsing arbitrary user defined context-free grammars.
-//       Uses a top-down Earley Parser written in pure python—returns ambiguous parse forests, with methods to extract and modify trees.
-//     </div>
-//   )
-// }
-
-// function PersonalSite() {
-//   return (
-//     <div>
-//       A capable computer algebra system written entirely in python,
-//       complete with a Pratt Parser for parsing natural language into mathematical expressions. 
-//       Comes equipped with operations from calculus and number theory, including symbolic integration and 
-//       prime factorization.
-//     </div>
-//   )
-// }
-
 export default function Projects() {
   function Separator() {
     return (
@@ -171,7 +142,8 @@ export default function Projects() {
 
   return (
     <section id="projects" className="min-h-screen pt-[25%] md:pt-[8%]">
-      <div className="sectionTitle text-5xl text-center mb-[15%] lg:mb-[5%]"> Projects </div>
+      <div className="sectionTitle text-5xl text-center mb-[30px] lg:mb-[20px]"> Projects </div>
+      <div className="text-3xl lg:text-2xl text-center mb-[15%] lg:mb-[5rem]">click on a project to learn more</div>
       <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-[2%] space-y-[10%]">
         <LevyCASCard />
         <PersonalSiteCard />

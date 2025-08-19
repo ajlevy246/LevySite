@@ -30,7 +30,21 @@ export default function PersonalSitePopup({ isOpen, setIsOpen }: LevyCASPopupPro
             >
                 <h1>Portfolio Site</h1>
                 <p className="pb-[200px]">My personal site, with more info about me. </p>
-                <button className="cursor-pointer glow" onClick={() => setIsOpen(false)}>Close</button>
+                <button onClick={() => setIsOpen(false)}>Close</button>
             </motion.div>
-        </motion.div>)
+        </motion.div>
+    )
 }
+
+// Desc:
+
+// function PersonalSite() {
+//   return (
+//     <div>
+//       A capable computer algebra system written entirely in python,
+//       complete with a Pratt Parser for parsing natural language into mathematical expressions. 
+//       Comes equipped with operations from calculus and number theory, including symbolic integration and 
+//       prime factorization.
+//     </div>
+//   )
+// }

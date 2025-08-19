@@ -13,7 +13,7 @@ export default function About() {
     <section id="about" className="flex flex-col pt-[25%] md:pt-[8%] sm:flex-row justify-center space-x-[15%]">
       <div className="pt-[5%] max-w-md">
         <TextType
-          className="text-5xl text-gray-300 mb-4 min-h-[75px] sm:min-h-auto sm:whitespace-nowrap"
+          className="text-5xl text-gray-300 mb-4 min-h-[101px] sm:min-h-auto sm:whitespace-nowrap"
           text={["Welcome to my personal site!"]}
           typingSpeed={75}
           deletingSpeed={0}
