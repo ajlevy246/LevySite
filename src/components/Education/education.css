@@ -11,6 +11,7 @@
   max-width: 1350px;
   box-shadow: 0 4px 12px #3b82f6;
   position: relative;
+  background-color: #0d1b2a;
 }
 
 /* Card Title */
@@ -30,7 +31,7 @@
   font-style: italic;
   margin-bottom: 1.25rem;
   font-size: 1.25rem;
-  color: #99a1af
+  color: #c8d3e7
 }
 
 /* Content Section */
@@ -50,7 +51,7 @@
 /* Section content */
 .event section p {
   text-transform: capitalize;
-  color: #99a1af;
+  color: #c8d3e7;
   line-height: 1.4;
 }
 

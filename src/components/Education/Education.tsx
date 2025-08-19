@@ -57,7 +57,7 @@ function SherwoodHighSchool() {
             initial={{ opacity: 0, y: 125 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 1.1, ease: "easeOut" }}
         >
             <h1>Sherwood High School - <i>Sandy Spring, MD</i></h1>
             <h3>High School Diploma | 2021 - 2023 </h3>
