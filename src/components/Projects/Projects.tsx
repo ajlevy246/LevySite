@@ -1,6 +1,7 @@
 'use client';
 
 // Component Imports
+import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
@@ -14,19 +15,20 @@ import sitedemo from "@/assets/projects/sitedemo.png";
 import earleydemo from "@/assets/projects/earleydemo.png";
 import { FaG } from "react-icons/fa6";
 
-interface ProjectLinkProps {
-  href: string,
-}
-
-function ProjectLink({ href }: ProjectLinkProps) {
+function ProjectLink({ href }: { href: string }) {
   return (
     <Link href={href}><FaGithub className="projectIcon"/></Link>
   )
 }
 
 function LevyCASCard() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
+    <>
+    {/* Project Card */}
     <motion.div
+      onClick={() => setIsOpen(true)}
       initial={{ opacity: 0, y: 85 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -44,6 +46,33 @@ function LevyCASCard() {
         /></div>
       </div>
     </motion.div>
+
+    {/* Project popup */}
+    <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="projectPopup"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsOpen(false)}
+          >
+            <motion.div
+              className="projectBox"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h2>LevyCAS</h2>
+              <p className="pb-[200px]">Whoop Whoop</p>
+              <button className="cursor-pointer glow" onClick={() => setIsOpen(false)}>Close</button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }
 
