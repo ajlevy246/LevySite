@@ -182,7 +182,7 @@ export default function Navbar() {
                             <li><Link href="/#projects" onClick={closeAndScroll}>projects</Link></li>
                             <li><Link className="navExtern" href="/resume.pdf"><MdPictureAsPdf className="mt-[2.5px]"/>resume</Link></li>
                             <li><Link className="navExtern" href="mailto:ajlevy246@gmail.com"><LuMails className="mt-[3px]"/>contact</Link></li>
-                            <div />
+                            <div className="h-[1rem]"/>
                         </motion.ul>
                     )}
                 </AnimatePresence>

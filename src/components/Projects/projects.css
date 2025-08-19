@@ -65,32 +65,3 @@
     background: #3b82f6;
     color: #fff;
 }
-
-/* Project Description Popup */
-/* Modal background overlay */
-.projectPopup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-/* Popup content box */
-.projectBox {
-  background-color: #0d1b2a;
-  border-radius: 1rem;
-  border-width: 5px;
-  border-color: #000000;
-  padding: 2rem;
-  max-width: 600px;
-  width: 90%;
-  color: white;
-  box-shadow: 0 0 12px #3b82f6;
-  text-align: center;
-}

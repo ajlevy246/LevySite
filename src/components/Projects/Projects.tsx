@@ -7,6 +7,11 @@ import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 
+import LevyCASPopup from "@/components/Projects/popups/LevyCASPopup";
+import EarleyParserPopup from "./popups/EarleyParserPopup";
+import PersonalSitePopup from "./popups/PersonalSitePopup";
+
+// Style Imports
 import "./projects.css";
 
 // Image Imports
@@ -26,98 +31,105 @@ function LevyCASCard() {
 
   return (
     <>
-    {/* Project Card */}
-    <motion.div
-      onClick={() => setIsOpen(true)}
-      initial={{ opacity: 0, y: 85 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-    >
-      <div className="projectCard">
-        <h1>LevyCAS <ProjectLink href="https://github.com/ajlevy246/LevyCAS" /></h1>
-        <p>A pure python computer algebra system with a Pratt parser, complete with automatic simplification, symbolic integration and differentation, and more.</p>
-        <div className="projectImgWrapper"><Image
-          className=""
-          src={casdemo}
-          width="1871"
-          height="573" 
-          alt="The LevyCAS demo; showing a menu with options for calculus, numerical, and polynomial operations with examples"
-        /></div>
-      </div>
-    </motion.div>
+      {/* Project Card */}
+      <motion.div
+        onClick={() => setIsOpen(true)}
+        initial={{ opacity: 0, y: 85 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <div className="projectCard">
+          <h1>LevyCAS <ProjectLink href="https://github.com/ajlevy246/LevyCAS" /></h1>
+          <p>A pure python computer algebra system with a Pratt parser, complete with automatic simplification, symbolic integration and differentation, and more.</p>
+          <div className="projectImgWrapper"><Image
+            className=""
+            src={casdemo}
+            width="1871"
+            height="573" 
+            alt="The LevyCAS demo; showing a menu with options for calculus, numerical, and polynomial operations with examples"
+          /></div>
+        </div>
+      </motion.div>
 
-    {/* Project popup */}
-    <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            className="projectPopup"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setIsOpen(false)}
-          >
-            <motion.div
-              className="projectBox"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <h2>LevyCAS</h2>
-              <p className="pb-[200px]">Whoop Whoop</p>
-              <button className="cursor-pointer glow" onClick={() => setIsOpen(false)}>Close</button>
-            </motion.div>
-          </motion.div>
-        )}
+      {/* Project popup */}
+      <AnimatePresence>
+          {isOpen && (
+            <LevyCASPopup isOpen={isOpen} setIsOpen={setIsOpen} />
+          )}
       </AnimatePresence>
     </>
   )
 }
 
 function PersonalSiteCard() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 95 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1, ease: "easeOut" }}
-    >
-      <div className="projectCard">
-        <h1>Portfolio Site <ProjectLink href="https://github.com/ajlevy246/LevySite" /></h1>
-        <p>You're looking at it! Built to showcase my experience, this site was developed in Next.js with Typescript and TailwindCSS, and deployed with Docker.</p>
-        <div className="projectImgWrapper">
-        <Image
-          src={sitedemo}
-          width="2535"
-          height="1314"
-          alt="A screenshot of the homepage of my personal site, wiht a background image of Stowe, Vermont and an image of me in the foreground."
-        /></div>
-      </div>
-    </motion.div>
+    <>
+      {/* Project Card */}
+      <motion.div
+        onClick={() => setIsOpen(true)}
+        initial={{ opacity: 0, y: 95 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        <div className="projectCard">
+          <h1>Portfolio Site <ProjectLink href="https://github.com/ajlevy246/LevySite" /></h1>
+          <p>You&apos;re looking at it! Built to showcase my experience, this site was developed in Next.js with Typescript and TailwindCSS, and deployed with Docker.</p>
+          <div className="projectImgWrapper">
+          <Image
+            src={sitedemo}
+            width="2535"
+            height="1314"
+            alt="A screenshot of the homepage of my personal site, wiht a background image of Stowe, Vermont and an image of me in the foreground."
+          /></div>
+        </div>
+      </motion.div>
+
+      {/* Project popup */}
+      <AnimatePresence>
+        {isOpen && (
+          <PersonalSitePopup isOpen={isOpen} setIsOpen={setIsOpen} />
+        )}
+      </AnimatePresence>
+    </>
   )
 }
 
 function EarleyParserCard() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 110 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
-    >
-      <div className="projectCard">
-        <h1>Earley Parser <ProjectLink href="https://github.com/ajlevy246/" /></h1>
-        <p>A powerful python implementation of the Earley algorithm for user-defined context-free grammars.</p>
-        <div className="projectImgWrapper"><Image 
-          src={earleydemo}
-          width="1043"
-          height="607"
-          alt="Pseudocode for the first steps of the Earley parsing algorithm, taken from wikipedia"
-        /></div>
-      </div>
-    </motion.div>
+    <>
+      {/* Project Card */}
+      <motion.div
+        onClick={() => setIsOpen(true)}
+        initial={{ opacity: 0, y: 110 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+      >
+        <div className="projectCard">
+          <h1>Earley Parser <ProjectLink href="https://github.com/ajlevy246/" /></h1>
+          <p>A powerful python implementation of the Earley algorithm for user-defined context-free grammars.</p>
+          <div className="projectImgWrapper"><Image 
+            src={earleydemo}
+            width="1043"
+            height="607"
+            alt="Pseudocode for the first steps of the Earley parsing algorithm, taken from wikipedia"
+          /></div>
+        </div>
+      </motion.div>
+
+      {/* Project popup */}
+      <AnimatePresence>
+        {isOpen && (
+          <EarleyParserPopup isOpen={isOpen} setIsOpen={setIsOpen} />
+        )}
+      </AnimatePresence>
+    </>
   )
 }
 
