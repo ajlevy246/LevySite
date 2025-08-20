@@ -18,7 +18,6 @@ import "./projects.css";
 import casdemo from "@/assets/projects/levycasdemo.png";
 import sitedemo from "@/assets/projects/sitedemo.png";
 import earleydemo from "@/assets/projects/earleydemo.png";
-import { FaG } from "react-icons/fa6";
 
 function ProjectLink({ href }: { href: string }) {
   return (
@@ -134,12 +133,6 @@ function EarleyParserCard() {
 }
 
 export default function Projects() {
-  function Separator() {
-    return (
-      <li><hr className="w-[300px] max-w-[300px] justify-self-center border-blue-800"/></li>
-    )
-  }
-
   return (
     <section id="projects" className="min-h-screen pt-[25%] md:pt-[8%]">
       <div className="sectionTitle text-5xl text-center mb-[30px] lg:mb-[20px]"> Projects </div>
