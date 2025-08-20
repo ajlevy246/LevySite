@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gradio/client": "^1.17.1",
     "gsap": "^3.13.0",
     "motion": "^12.23.12",
     "next": "15.4.6",
