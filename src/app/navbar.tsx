@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link"
-import React, { ReactElement, useState } from "react";
+import React, { useState } from "react";
 import { animate, AnimatePresence, motion, useScroll, useMotionValueEvent } from "motion/react";
 import { MdPictureAsPdf } from "react-icons/md";
 import { LuMails } from "react-icons/lu";
