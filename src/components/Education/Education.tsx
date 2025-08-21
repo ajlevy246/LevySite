@@ -17,7 +17,7 @@ function VirginiaTech() {
             <h3>B.S. Mathematics | B.S. Computer Science | 2023 - Present</h3>
             <section>
                 <h2>GPA:</h2>
-                <p>3.9</p>
+                <p>3.97</p>
             </section>
             <section>
                 <h2 className="lg:whitespace-nowrap">relevant coursework:</h2>
@@ -44,7 +44,7 @@ function MontgomeryCollege() {
             </section>
             <section>
                 <h2>Relevant Coursework:</h2>
-                <p>python programming, physics, C++ programming, calculus</p>
+                <p>discrete math, multivariate calculus, linear algebra, physics, C++ programming</p>
             </section>
         </motion.div>
     )
@@ -62,12 +62,8 @@ function SherwoodHighSchool() {
             <h1>Sherwood High School - <i>Sandy Spring, MD</i></h1>
             <h3>High School Diploma | 2021 - 2023 </h3>
             <section>
-                <h2>Awards:</h2>
-                <p>Clifford Beck Award for Excellency in Physics</p>
-            </section>
-            <section>
                 <h2>Relevant Coursework:</h2>
-                <p>python programming, physics, C++ programming, calculus</p>
+                <p>AP Calculus B.C., AP Computer Science Principles </p>
             </section>
         </motion.div>
     )

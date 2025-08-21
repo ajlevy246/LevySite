@@ -68,7 +68,7 @@ export default function LevyCASPopup({ isOpen, setIsOpen }: LevyCASPopupProps) {
                         and press the calculate button to compute the derivative with respect to x.
                     </p>
                     <form className="mt-[7rem]" onSubmit={handleSubmit}>
-                        <input className="text-xl pl-3 border-white border-[3px] h-[3rem] rounded-[5px] mr-10 mb-10" value={expr} onChange={e => setExpr(e.target.value)} placeholder="Expression" />
+                        <input className="text-xl pl-3 border-white border-[3px] h-[3rem] rounded-[5px] mr-10 mb-10" value={expr} onChange={e => setExpr(e.target.value.toLowerCase())} placeholder="Expression" />
                         <button className="mb-10" type="submit">Calculate</button>
                         <div className="text-2xl">
                             <TextType deletingSpeed={0} typingSpeed={5} key={derivativeOutput} text={derivativeOutput} />
