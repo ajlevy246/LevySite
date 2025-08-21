@@ -21,7 +21,17 @@ import earleydemo from "@/assets/projects/earleydemo.png";
 
 function ProjectLink({ href }: { href: string }) {
   return (
-    <Link href={href}><FaGithub className="projectIcon"/></Link>
+    <Link 
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      // Popup should not open on button press
+      onClick={(e) => {
+        e.stopPropagation();
+      }}
+    >
+      <FaGithub className="projectIcon"/>
+    </Link>
   )
 }
 
@@ -76,7 +86,7 @@ function PersonalSiteCard() {
       >
         <div className="projectCard">
           <h1>Portfolio Site <ProjectLink href="https://github.com/ajlevy246/LevySite" /></h1>
-          <p>You&apos;re looking at it! Built to showcase my experience, this site was developed in Next.js with Typescript and TailwindCSS, and deployed with Docker.</p>
+          <p>You&apos;re looking at it! Built to showcase my experience, this site was developed in Next.js with Typescript and TailwindCSS, and deployed through Vercel.</p>
           <div className="projectImgWrapper">
           <Image
             src={sitedemo}
