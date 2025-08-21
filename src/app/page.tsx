@@ -3,6 +3,7 @@ import HeroIntro from "./hero";
 import About from "@/components/About/About";
 import RollingGallery from "@/blocks/Components/RollingGallery/RollingGallery";
 import Education from "@/components/Education/Education";
+import Honors from "@/components/Honors/Honors";
 import Projects from "@/components/Projects/Projects";
 
 // Image imports
@@ -18,7 +19,7 @@ export default function Home() {
   return (
     <main className="w-full">
       <HeroIntro />
-      <section className="gradBackground px-[10%]">
+      <section className="gradBackground px-[10%] pb-[100px]">
       <About />
       <div id="gallery" className="hidden sm:flex sm:mt-[10%]">
       <RollingGallery
@@ -36,6 +37,7 @@ export default function Home() {
         />
       </div>
       <Education />
+      <Honors />
       <Projects />
       </section>
     </main>
