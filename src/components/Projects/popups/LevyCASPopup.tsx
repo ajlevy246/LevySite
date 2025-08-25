@@ -52,12 +52,18 @@ export default function LevyCASPopup({ isOpen, setIsOpen }: LevyCASPopupProps) {
                 onClick={(e) => e.stopPropagation()}
             >
                 <section>
+                    {/* Project Title */}
                     <h1>LevyCAS</h1>
+                    
+                    {/* Project Description */}
                     <p>
                         LevyCAS is a computer algebra system written in pure python and developed as a python package. 
-                        LevyCAS uses a built-in Pratt parser capable of turning natural language mathematical
-                        expressions into Python objects that can be manipulated. 
+                        <span className="hidden xl:contents"> LevyCAS uses a built-in Pratt parser capable of turning natural language mathematical
+                            expressions into Python objects that can be manipulated.
+                        </span>
                     </p>
+                    <p className="xl:hidden"> LevyCAS uses a Pratt parser to turn natural language expressions into python objects.
+                         Check out the demo below by entering a math expression in terms of the variable x, and watch as its derivative is computed.</p>
                     <p className="hidden xl:flex">
                         The system comes equipped with a set of powerful operations, including automatic simplification, 
                         symbolic integration and differentation, polynomial greatest common divisors, integer 
@@ -67,28 +73,20 @@ export default function LevyCASPopup({ isOpen, setIsOpen }: LevyCASPopupProps) {
                         Use the demo below by entering a mathematical expression in plain language (like &quot;2x + 3&quot; or &quot;2xsin(x)&quot;)
                         and press the calculate button to compute the derivative with respect to x.
                     </p>
-                    <form className="mt-[7rem]" onSubmit={handleSubmit}>
-                        <input className="text-xl pl-3 border-white border-[3px] h-[3rem] rounded-[5px] mr-10 mb-10" value={expr} onChange={e => setExpr(e.target.value.toLowerCase())} placeholder="Expression" />
-                        <button className="mb-10" type="submit">Calculate</button>
-                        <div className="text-2xl">
-                            <TextType deletingSpeed={0} typingSpeed={5} key={derivativeOutput} text={derivativeOutput} />
+
+                    {/* Project demo */}
+                    <form className="mt-[3rem]" onSubmit={handleSubmit}>
+                        <input className="text-xl pl-3 border-white border-[3px] h-[3rem] rounded-[5px] mr-10 mb-10" value={expr} onChange={e => setExpr(e.target.value.toLowerCase())} placeholder="Enter expression" />
+                        <button className="mb-5" type="submit">Calculate</button>
+                        <div className="text-2xl derivative-output">
+                            <TextType deletingSpeed={0} typingSpeed={25} key={derivativeOutput} text={derivativeOutput} />
                         </div>
                     </form>
                 </section>
+
+                {/* Close button */}
                 <button onClick={() => setIsOpen(false)}>Close</button>
             </motion.div>
         </motion.div>
     )
 }
-
-// Desc:
-
-// function LevyCAS() {
-//   return (
-//     <div className="text-md md:text-2xl text-gray-400">A capable computer algebra system written entirely in python,
-//       complete with a Pratt Parser for parsing natural language into mathematical expressions. 
-//       Comes equipped with operations from calculus and number theory, including symbolic integration and 
-//       prime factorization.
-//     </div>
-//   )
-// }

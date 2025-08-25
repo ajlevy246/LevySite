@@ -1,3 +1,30 @@
+/* Responsive layout for navItems */
+@media (max-width: 900px) {
+    .navItems li {
+        margin: 4px;
+    }
+    .navItems li > a {
+        font-size: 1.1rem;
+        line-height: 1.5rem;
+        padding: 0.8rem 0.6rem;
+        max-height: 28px;
+        border-radius: 0.4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .navItems li {
+        margin: 2px;
+    }
+    .navItems li > a {
+        font-size: 0.95rem;
+        line-height: 1.2rem;
+        padding: 0.4rem 0.3rem;
+        max-height: 22px;
+        border-radius: 0.3rem;
+        gap: 0.2rem;
+    }
+}
 .navItems li {
     margin: 10px;
 }
@@ -14,7 +41,7 @@
     font-size: 1.5rem;
     line-height: 2rem;
 
-    padding: 1.25rem 1rem;
+    padding: 1.25rem 0.75rem;
     backdrop-filter: blur(12px); 
     background-color: rgba(255, 255, 255, 0.15);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),

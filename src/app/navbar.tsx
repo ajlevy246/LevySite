@@ -77,8 +77,9 @@ export default function Navbar() {
                 initial={false}
                 transition={{ duration: 0.3, ease: "easeOut" }}
             >
+                {/* Navbar container */}
                 <motion.div 
-                    className="flex justify-between lg:mx-auto md:grid md:grid-cols-2 items-center my-2"
+                    className="flex justify-between md:grid md:grid-cols-2 items-center my-2"
                     animate={{
                         marginLeft: aboveIntro ? 50 : 20,
                         marginRight: aboveIntro? 75 : 50
@@ -87,7 +88,7 @@ export default function Navbar() {
                     transition={{ duration: 0.3, ease: "easeOut" }}
                 >
                     {/* Desktop name */}
-                    <div className="hidden lg:flex items-center ml-[25%] sectionTitle font-semi-bold">
+                    <div className="hidden lg:flex items-center sectionTitle font-semi-bold">
                         <motion.a
                             href="/"
                             onClick={scrollHome}

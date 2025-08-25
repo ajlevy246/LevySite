@@ -46,7 +46,7 @@
   margin-left: 1rem;
   margin-top: 1rem;
 
-  font-size: 3rem;
+  font-size: 2.25rem;
   font-weight: bold;
   white-space: nowrap;
 
@@ -55,11 +55,22 @@
 
 /* Project Description */
 .projectBox p {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     text-align: left;
     text-indent: 2rem;
 
     margin: 2rem 0rem;
+}
+
+/* Repsonsive layout: > medium */
+@media (min-width: 1024px) {
+  .projectBox h1 {
+    font-size: 3rem;
+  }
+
+  .projectBox p {
+    font-size: 1.3rem;
+  }
 }
 
 /* Close Button */
@@ -92,4 +103,17 @@
     transform: scale(1.05) translateY(-0.1rem);
     background-color: #3b82f6;
     box-shadow: 0 0 8px 1px #3b82f6;
+}
+
+/* Demo output */
+.derivative-output {
+  max-height: 8rem;
+  overflow-y: auto;
+  width: 100%;
+  margin-bottom: 1rem;
+  word-break: break-word;
+  background: rgba(255,255,255,0.05);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
 }
