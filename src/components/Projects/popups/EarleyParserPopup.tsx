@@ -29,7 +29,8 @@ export default function EarleyParserPopup({ isOpen, setIsOpen }: LevyCASPopupPro
                 onClick={(e) => e.stopPropagation()}
             >
                 <h1>Earley Parser</h1>
-                <p className="pb-[200px]">Python parser for user-defined context-free grammar.</p>
+                <p>Python parser for user-defined context-free grammar.</p>
+                <p> More information soon! </p>
                 <button onClick={() => setIsOpen(false)}>Close</button>
             </motion.div>
         </motion.div>

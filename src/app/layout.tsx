@@ -19,7 +19,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Alex Levy - Personal",
-  description: "Personal Webpage - Alex Levy",
+  description: "Personal portfolio - projects, resume, and more about me.",
 };
 
 import Navbar from "./navbar";

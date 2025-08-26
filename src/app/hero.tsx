@@ -10,7 +10,7 @@ import { CgMail } from "react-icons/cg";
 import { ReactElement } from "react";
 
 // Image imports
-import profile from "@/assets/profile.jpg";
+import profile from "@/assets/profile.jpeg";
 import introbg from "@/assets/introbackground.jpg";
 
 export default function HeroIntro() {
@@ -47,9 +47,9 @@ export default function HeroIntro() {
                 <Image
                     src={profile}
                     alt="Me"
-                    width="3000"
+                    width="2300"
                     height="3000"
-                    className="backgroundGlow scale-80 md:scale-none rounded-full border-black border-[7px] object-cover w-[300px] h-[300px]"
+                    className="backgroundGlow scale-80 md:scale-none rounded-full border-black border-[7px] object-cover object-bottom-right w-[300px] h-[300px]"
                 />
                 <div className="sectionTitle text-7xl sm:text-9xl">Alex Levy</div>
                 <div className="sectionTitle italic text-4xl pb-[40px]">Computer Science & Discrete Math • Virginia Tech • Olney, MD</div>

@@ -29,7 +29,8 @@ export default function PersonalSitePopup({ isOpen, setIsOpen }: LevyCASPopupPro
                 onClick={(e) => e.stopPropagation()}
             >
                 <h1>Portfolio Site</h1>
-                <p className="pb-[200px]">My personal site, with more info about me. </p>
+                <p>My personal site, with more info about me. </p>
+                <p>More information soon!</p>
                 <button onClick={() => setIsOpen(false)}>Close</button>
             </motion.div>
         </motion.div>
