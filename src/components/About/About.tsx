@@ -23,7 +23,7 @@ export default function About() {
         />
         <div className="text-2xl text-gray-400">
           Hi there! I&apos;m a senior at Virginia Tech, studying computer science and discrete mathematics. 
-          My current area of interest is graphical neural networks, but I'm equally passionate about skiing cool places 
+          My current area of interest is graphical neural networks, but I&apos;m equally passionate about skiing cool places 
           and eating great food. Recently, I had the opportunity to attend the Park City Mathematics Institute (PCMI), 
           a three-week math conference in Park City, Utah, where I explored extremal combinatorics and its applications.
           Learn more about me and see some of my projects below! 
