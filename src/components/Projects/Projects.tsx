@@ -64,7 +64,7 @@ function LevyCASCard() {
       {/* Project popup */}
       <AnimatePresence>
           {isOpen && (
-            <LevyCASPopup isOpen={isOpen} setIsOpen={setIsOpen} />
+            <LevyCASPopup setIsOpen={setIsOpen} />
           )}
       </AnimatePresence>
     </>
@@ -100,7 +100,7 @@ function PersonalSiteCard() {
       {/* Project popup */}
       <AnimatePresence>
         {isOpen && (
-          <PersonalSitePopup isOpen={isOpen} setIsOpen={setIsOpen} />
+          <PersonalSitePopup setIsOpen={setIsOpen} />
         )}
       </AnimatePresence>
     </>
@@ -135,7 +135,7 @@ function EarleyParserCard() {
       {/* Project popup */}
       <AnimatePresence>
         {isOpen && (
-          <EarleyParserPopup isOpen={isOpen} setIsOpen={setIsOpen} />
+          <EarleyParserPopup setIsOpen={setIsOpen} />
         )}
       </AnimatePresence>
     </>

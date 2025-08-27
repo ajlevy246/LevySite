@@ -5,11 +5,10 @@ import { motion } from "motion/react";
 import "./popups.css";
 
 type LevyCASPopupProps = {
-    isOpen: boolean;
     setIsOpen: (open: boolean) => void;
 };
 
-export default function PersonalSitePopup({ isOpen, setIsOpen }: LevyCASPopupProps) {
+export default function PersonalSitePopup({ setIsOpen }: LevyCASPopupProps) {
     return (
         // Popup container
         <motion.div

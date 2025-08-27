@@ -38,7 +38,7 @@
 }
 
 
-@media (min-width: 1024) {
+@media (min-width: 1024px) {
     #honors > div {
         flex-direction: row;
     }

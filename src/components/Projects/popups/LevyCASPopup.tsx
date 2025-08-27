@@ -9,11 +9,10 @@ import TextType from "@/blocks/TextAnimations/TextType/TextType";
 import "./popups.css";
 
 type LevyCASPopupProps = {
-    isOpen: boolean;
     setIsOpen: (open: boolean) => void;
 };
 
-export default function LevyCASPopup({ isOpen, setIsOpen }: LevyCASPopupProps) {
+export default function LevyCASPopup({ setIsOpen }: LevyCASPopupProps) {
     const [ expr, setExpr ] = useState('');
     const [ derivativeOutput, setDerivativeOutput ] = useState('');
 
