@@ -14,7 +14,7 @@ export default function Honors() {
 
             {/* Honors List */}
             <div>
-                {/* Honors/Awards */}
+                {/* Honors card */}
                 <motion.ul
                     initial={{ opacity: 0, x: -65 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -27,7 +27,7 @@ export default function Honors() {
                     <li><b>AP Scholar with Distinction</b> - <i>College Board, 2021</i></li>
                 </motion.ul>
 
-                {/* Scholarships */}
+                {/* Awards card */}
                <motion.ul
                     initial={{ opacity: 0, x: 65 }}
                     whileInView={{ opacity: 1, x: 0 }}

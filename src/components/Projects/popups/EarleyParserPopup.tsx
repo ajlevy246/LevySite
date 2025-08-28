@@ -2,6 +2,10 @@
 
 import { motion } from "motion/react";
 
+// Icons
+import { FaPython } from "react-icons/fa"; // Python
+
+
 import "./popups.css";
 
 type LevyCASPopupProps = {
@@ -28,7 +32,8 @@ export default function EarleyParserPopup({ setIsOpen }: LevyCASPopupProps) {
                 onClick={(e) => e.stopPropagation()}
             >
                 <h1>Earley Parser</h1>
-                <p>Python parser for user-defined context-free grammar.</p>
+                <p>A python package capable of parsing arbitrary user defined context-free grammars.</p>
+                <p>Uses a top-down Earley Parser written in pure python. Provides the user with parse forests and methods to extract and modify trees.</p>
                 <p> More information soon! </p>
                 <button onClick={() => setIsOpen(false)}>Close</button>
             </motion.div>

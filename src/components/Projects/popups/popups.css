@@ -117,3 +117,12 @@
   padding: 0.5rem 1rem;
   box-sizing: border-box;
 }
+
+Link {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+Link:hover {
+  text-shadow: 0 0 16px #3b82f6;
+}

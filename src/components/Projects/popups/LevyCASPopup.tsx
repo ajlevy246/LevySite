@@ -6,6 +6,9 @@ import { useState } from "react";
 
 import TextType from "@/blocks/TextAnimations/TextType/TextType";
 
+// Icons
+import { FaPython } from "react-icons/fa"; // Python
+
 import "./popups.css";
 
 type LevyCASPopupProps = {
