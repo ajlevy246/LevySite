@@ -1,6 +1,7 @@
 'use client';
 
 import Link from "next/link"
+import { useRouter, usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { animate, AnimatePresence, motion, useScroll, useMotionValueEvent } from "motion/react";
 import { MdPictureAsPdf } from "react-icons/md";
@@ -17,6 +18,8 @@ export default function Navbar() {
 
     // Animation state
     const { scrollY } = useScroll();
+    const router = useRouter();
+    const pathname = usePathname();
     const [ aboveIntro, setAboveIntro ] = useState(true);
 
     useMotionValueEvent(scrollY, 'change', (current) => {
@@ -24,8 +27,15 @@ export default function Navbar() {
     })
 
     const scrollHome = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        // If we are already on the homepage, scroll up
+        // otherwise navigate home
+        if (pathname !== "/") {
+            return;
+        }
+
         e.preventDefault();
         const scrollY = window.scrollY;
+
 
         animate(scrollY, 0, {
             duration: 0.8, 
@@ -42,7 +52,13 @@ export default function Navbar() {
             const selector = href.replace("/", "");
             const el = document.querySelector(selector);
 
-            if (el instanceof HTMLElement) {
+            if (!(el instanceof HTMLElement)) {
+                // Not on the homepage -> navigate there first
+                router.push(href);
+            }
+
+            else  {
+                // On the homepage -> scroll to section
                 const targetY = el.getBoundingClientRect().top + window.scrollY;
 
                 animate(window.scrollY, targetY, {

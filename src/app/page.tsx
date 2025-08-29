@@ -1,3 +1,10 @@
+'use client'
+
+// React imports
+import { useEffect } from "react";
+import { animate } from "motion/react";
+import { usePathname } from "next/navigation";
+
 // Components imports
 import HeroIntro from "./hero";
 import About from "@/components/About/About";
@@ -16,6 +23,26 @@ import gallery6 from "@/assets/gallery/gallery6.jpg";
 import gallery7 from "@/assets/gallery/gallery7.jpg";
 
 export default function Home() {
+
+  // Dynamic scrolling when user navigates home via navbar
+    const pathname = usePathname();
+
+    useEffect(() => {
+        // Get section name, then scroll there after page loads
+        if (pathname === '/' && window.location.hash) {
+            const el = document.querySelector(window.location.hash);
+            if (el instanceof HTMLElement) {
+                const targetY = el.getBoundingClientRect().top + window.scrollY;
+                // Longer animation to ease staggering
+                animate(window.scrollY, targetY, {
+                    duration: 2,
+                    ease: [0.74, 0.15, 0.3, 0.96],
+                    onUpdate: (latest) => window.scrollTo(0, latest),
+                });
+            }
+        }
+    }, [pathname]);
+
   return (
     <main className="w-full">
       <HeroIntro />
