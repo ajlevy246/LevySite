@@ -1,0 +1,5 @@
+/* Whole page */
+.cas {
+    background-origin: content-box;
+    background: var(--background);
+}
