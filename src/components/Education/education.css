@@ -24,6 +24,7 @@
 /* Card Location */
 .event i {
     white-space: nowrap;
+    font-size: 0.75em;
 }
 
 /* Card Subtitle */
@@ -90,6 +91,10 @@
 
   .event section {
     margin-bottom: 1.25rem;
+  }
+
+  .event i {
+    font-size: 1em;
   }
 }
 

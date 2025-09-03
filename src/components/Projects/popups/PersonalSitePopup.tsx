@@ -2,12 +2,21 @@
 
 import { motion } from "motion/react";
 import Link from "next/link";
+import Image from "next/image";
 
-// Icons 
-import { SiNextdotjs } from "react-icons/si"; // Next.js
-import { RiTailwindCssFill } from "react-icons/ri"; // TailwindCSS
-import { SiVercel } from "react-icons/si"; // Vercel
+// Icon Images 
+import nextjslogo from "@/assets/projects/modals/nextlogo.svg"; // Next.js
+import tailwindlogo from "@/assets/projects/modals/taliwindlogo.svg"; // TailwindCSS
+import reactlogo from "@/assets/projects/modals/reactlogo.svg"; // React
 
+// Icons
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"; // Github
+import { FiX } from "react-icons/fi"; // Close icon
+
+// Images
+import sitedemo from "@/assets/projects/sitedemo.png";
+
+// Styles
 import "./popups.css";
 
 type LevyCASPopupProps = {
@@ -33,13 +42,59 @@ export default function PersonalSitePopup({ setIsOpen }: LevyCASPopupProps) {
                 transition={{ duration: 0.3 }}
                 onClick={(e) => e.stopPropagation()}
             >
-                <h1>Portfolio Site</h1>
-                <p>This is my personal site that I built to showcase my projects. It was developed using Next.js and TailwindCSS and deployed with Vercel.</p>
-                <p>To showcase my computer algebra system LevyCAS, the site dynamically connects to an API hosted at <Link href="https://huggingface.co/spaces/ajlevy246/levycas-app">huggingface.co</Link> so that the user can interact 
-                    with the python package through the demo.
-                </p>
-                <p>More information soon!</p>
-                <button onClick={() => setIsOpen(false)}>Close</button>
+                {/* Close Icon */}
+                <button className="modalTopClose" onClick={() => setIsOpen(false)}><FiX /></button>
+
+                {/* Headers */}
+                <h1>LevyCAS</h1>
+                <h2>Modern Computer Algebra System for Python Apps</h2>
+                
+                {/* Tech Stack */}
+                <ul className="projectStack">
+                    <li><Image src={nextjslogo} alt="Next.js logo"/>Next.js</li>
+                    <li><Image src={tailwindlogo} alt="TailwindCSS logo"/>TailwindCSS</li>
+                    <li><Image src={reactlogo} alt="React logo"/>React</li>
+                </ul>
+
+                {/* Overview */}
+                <p>
+                    LevyCAS is a lightweight computer algebra system build in pure Python 
+                    for fast and efficient symbolic mathematics. Distributed as a Python package
+                    on TestPyPi, LevyCAS provides an easy-to-use API (powered by Gradio and hosted on HuggingFace)
+                    for seamless integration into applications.
+                </p><br />
+                {/* Container for image and features list */}
+                <div className="featuresContainer">
+                    {/* Features */}
+                    <div className="projectFeatures">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Parses implicit multiplication and elementary functions using a Pratt parsing algorithm.</li>
+                            <li>Performs symbolic operations including integration, differentiation, and polynomial GCD computation.</li>
+                            <li>Includes automated testing with Pytest and GitHub Actions.</li>
+                            <li>Offers an online API for web applications requiring symbolic math.</li>
+                        </ul>
+                    </div>
+                    
+
+                    {/* Image */}
+                    <div className="projectImage">
+                        <Image
+                            src={sitedemo}
+                            width="883"
+                            height="306"
+                            alt="A sample of the LevyCAS README, providing two examples on how to integrate expressions with the package."
+                        />
+                    </div>
+
+
+                </div>
+
+                {/* Github Link */}
+                {/* <Link href="https://github.com/ajlevy246/levycas"><FaGithub /></Link> */}
+
+                {/* Close button */}
+                <button className="modalBottomClose" onClick={() => setIsOpen(false)}>Close</button>
             </motion.div>
         </motion.div>
     )

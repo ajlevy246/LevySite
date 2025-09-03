@@ -22,6 +22,8 @@
 
 /* Popup content box */
 .projectBox {
+  position: fixed;
+
   background-color: #0d1b2a;
   border-radius: 1rem;
   border-width: 5px;
@@ -30,21 +32,41 @@
   max-width: 1200px;
   width: 90%;
   max-height: 800px;
-  height: 80%;
+  /* height: 80% */
+  min-height: 80%;
   color: white;
   box-shadow: 0 0 12px #3b82f6;
   text-align: center;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.projectBox .modalTopClose {
+  position: absolute;
+  top: 1.5%;
+  right: 2%;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .projectBox .modalTopClose {
+    top: 3%;
+    right: auto;
+    align-self: flex-end;
+    font-size: 2.5rem;
+  }
 }
 
 /* Project title */
 .projectBox h1 {
   margin-left: 1rem;
-  margin-top: 1rem;
+  margin-top: 0.1vh;
+  margin-bottom: 0.5rem;
 
   font-size: 2.25rem;
   font-weight: bold;
@@ -53,29 +75,91 @@
   text-shadow: 0 0 16px #3b82f6;
 }
 
+@media (min-width: 1024px) {
+  .projectBox h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Project subtitle */
+.projectBox h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 602px) {
+  .projectBox h2 {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.projectStack {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 0;
+}
+
+.projectStack li {
+  border-radius: 12px;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  font-weight: bold;
+  gap: 5px;
+}
+
+.projectStack li:hover {
+  background: rgba(230, 230, 230, 0.75);
+  transform: translateY(-2px);
+}
+
+.projectStack li img {
+  border-radius: 12px;
+  padding: 8%;
+  background: rgba(240, 240, 240, 0.4);
+  height: 10vw;
+  width: 12vw;
+  object-fit: contain;
+  filter: none;
+}
+
+@media (min-width: 604px) {
+  .projectStack li img {
+    height: 70px;
+    width: 80px;
+  }
+}
+
 /* Project Description */
 .projectBox p {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     text-align: left;
     text-indent: 2rem;
 
     margin: 2rem 0rem;
 }
 
-/* Repsonsive layout: > medium */
+/* Responsive layout: > medium */
 @media (min-width: 1024px) {
-  .projectBox h1 {
-    font-size: 3rem;
-  }
-
   .projectBox p {
     font-size: 1.3rem;
   }
 }
 
 /* Close Button */
-.projectBox button {
+.projectBox .modalBottomClose {
+    position: absolute;
+    top: 90%;
+    right: auto;
     align-self: center;
+    display: none;
 
     color: rgb(243, 244, 246);
     text-transform: capitalize;
@@ -85,8 +169,9 @@
     line-height: 2rem;
 
     padding: 0rem 1.25rem;
-    backdrop-filter: blur(12px); 
-    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    background-color:  rgba(255, 255, 255, 0.15);
+    background-blend-mode: lighten;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
                 0 4px 6px -4px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -99,13 +184,140 @@
     cursor: pointer;
 }
 
-.projectBox button:hover {
+@media (min-width: 1024px) {
+  .projectBox .modalBottomClose {
+    display: block;
+  }
+}
+
+.projectBox .modalBottomClose:hover {
     transform: scale(1.05) translateY(-0.1rem);
     background-color: #3b82f6;
     box-shadow: 0 0 8px 1px #3b82f6;
 }
 
-/* Demo output */
+/* Project features container */
+.featuresContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 15;
+}
+
+@media (min-width: 1024px) {
+  .featuresContainer {
+    flex-direction: row;
+  }
+}
+
+/* Project Image container (for overlay) */
+.projectImage {
+  position: relative;
+  align-self: center;
+
+  box-shadow: 0 0 10px 1px #3b82f6;
+  border-radius: 10px;
+  left: -0.02;
+  height: fit-content;
+  width: fit-content;
+}
+
+/* Pseudo-element for box shadow over image */
+.projectImageOverlay::after {
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: box-shadow 0.2s ease;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 1);
+}
+
+/* On hover, removes box shadow */
+.projectImageOverlay:hover::after {
+  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* Project Image (image itself) */
+.projectImage img {
+  border-radius: 10px;
+  transition: filter 0.2s ease;
+  max-height: 250px;
+  width: auto;
+}
+
+/* Project image link (if present) */
+.projectImageOverlay div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  cursor: pointer;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  padding: 0.5rem 1rem;
+
+  font-weight: bold;
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+
+  transition: all 0.25s ease;
+}
+
+/* Project image link styled when image is hovered over */
+.projectImageOverlay:hover div {
+  transform: translate(-50%, -55%) scale(1.05);
+  background: rgba(15, 15, 15, 0.85);
+}
+
+/* Further animation when the button is hovered over directly */
+.projectImageOverlay div:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 1);
+}
+
+/* Project features list and header container */
+.projectFeatures {
+  padding: 1rem;
+  text-align: left;
+}
+
+/* Features header */
+.projectFeatures h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Features list */
+.projectFeatures ul {
+  padding: 1rem;
+  list-style-type: disc;
+  font-size: 1.15rem;
+  
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: left;
+  max-width: 602px;
+}
+
+@media (min-width: 1024px) {
+  .projectFeatures ul {
+    font-size: 1.5rem;
+    gap: 25px;
+  }
+  
+}
+
+/* 
+/* Demo output
 .derivative-output {
   max-height: 8rem;
   overflow-y: auto;
@@ -116,13 +328,4 @@
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
   box-sizing: border-box;
-}
-
-Link {
-  font-weight: bold;
-  cursor: pointer;
-}
-
-Link:hover {
-  text-shadow: 0 0 16px #3b82f6;
-}
+} */

@@ -1,15 +1,28 @@
 'use client';
 
+// Dynamic
 import { motion } from "motion/react";
-import { Client } from "@gradio/client";
 import { useState } from "react";
 
-import TextType from "@/blocks/TextAnimations/TextType/TextType";
+// Components
+import Link from "next/link";
+import Image from "next/image";
+
+// Icon Images
+import pythonlogo from "@/assets/projects/modals/pythonlogo.svg"; // Python
+import huggingfacelogo from "@/assets/projects/modals/huggingfacelogo.svg"; // HuggingFace
+import pytestlogo from "@/assets/projects/modals/pytestlogo.svg"; // Pytest
 
 // Icons
-import { FaPython } from "react-icons/fa"; // Python
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"; // Github, External Link icon
+import { FiX } from "react-icons/fi"; // Close button
 
+
+// Styles
 import "./popups.css";
+
+// Images
+import casexample from "@/assets/projects/levycasdemo.png";
 
 type LevyCASPopupProps = {
     setIsOpen: (open: boolean) => void;
@@ -19,21 +32,21 @@ export default function LevyCASPopup({ setIsOpen }: LevyCASPopupProps) {
     const [ expr, setExpr ] = useState('');
     const [ derivativeOutput, setDerivativeOutput ] = useState('');
 
-    async function handleSubmit(e: React.FormEvent) {
-        e.preventDefault();
-        setDerivativeOutput("Loading...");
+    // async function handleSubmit(e: React.FormEvent) {
+    //     e.preventDefault();
+    //     setDerivativeOutput("Loading...");
 
-        try {
-            const client = await Client.connect("ajlevy246/levycas-api");
-            const result = await client.predict("/calculus/derivative", { expr, wrt: "x" });
+    //     try {
+    //         const client = await Client.connect("ajlevy246/levycas-api");
+    //         const result = await client.predict("/calculus/derivative", { expr, wrt: "x" });
 
-            setDerivativeOutput(result.data as string);
-        } 
+    //         setDerivativeOutput(result.data as string);
+    //     } 
         
-        catch {
-            setDerivativeOutput("failed, try a different expression...")
-        }
-    }
+    //     catch {
+    //         setDerivativeOutput("failed, try a different expression...")
+    //     }
+    // }
 
     return (
         // Popup container
@@ -53,42 +66,72 @@ export default function LevyCASPopup({ setIsOpen }: LevyCASPopupProps) {
                 transition={{ duration: 0.3 }}
                 onClick={(e) => e.stopPropagation()}
             >
-                <section>
-                    {/* Project Title */}
-                    <h1>LevyCAS</h1>
-                    
-                    {/* Project Description */}
-                    <p>
-                        LevyCAS is a computer algebra system written in pure python and developed as a python package. 
-                        <span className="hidden xl:contents"> LevyCAS uses a built-in Pratt parser capable of turning natural language mathematical
-                            expressions into Python objects that can be manipulated.
-                        </span>
-                    </p>
-                    <p className="xl:hidden"> LevyCAS uses a Pratt parser to turn natural language expressions into python objects.
-                         Check out the demo below by entering a math expression in terms of the variable x, and watch as its derivative is computed.</p>
-                    <p className="hidden xl:flex">
-                        The system comes equipped with a set of powerful operations, including automatic simplification, 
-                        symbolic integration and differentation, polynomial greatest common divisors, integer 
-                        factorization, and more.
-                    </p>
-                    <p className="hidden xl:flex">
-                        Use the demo below by entering a mathematical expression in plain language (like &quot;2x + 3&quot; or &quot;2xsin(x)&quot;)
-                        and press the calculate button to compute the derivative with respect to x.
-                    </p>
+                {/* Close Icon */}
+                <button className="modalTopClose" onClick={() => setIsOpen(false)}><FiX /></button>
 
-                    {/* Project demo */}
-                    <form className="mt-[3rem]" onSubmit={handleSubmit}>
-                        <input className="text-xl pl-3 border-white border-[3px] h-[3rem] rounded-[5px] mr-10 mb-10" value={expr} onChange={e => setExpr(e.target.value.toLowerCase())} placeholder="Enter expression" />
-                        <button className="mb-5" type="submit">Calculate</button>
-                        <div className="text-2xl derivative-output">
-                            <TextType deletingSpeed={0} typingSpeed={25} key={derivativeOutput} text={derivativeOutput} />
-                        </div>
-                    </form>
-                </section>
+                {/* Headers */}
+                <h1>LevyCAS</h1>
+                <h2>Modern Computer Algebra System for Python Apps</h2>
+                
+                {/* Tech Stack */}
+                <ul className="projectStack">
+                    <li><Image src={pythonlogo} alt="Python logo"/>Python</li>
+                    <li><Image src={huggingfacelogo} alt="HuggingFace Logo"/>Hugging Face</li>
+                    <li><Image src={pytestlogo} alt="Pytest logo" />Pytest</li>
+                </ul>
+
+                {/* Overview */}
+                <p>
+                    LevyCAS is a lightweight computer algebra system built in pure Python 
+                    for fast and efficient symbolic mathematics. Distributed as a Python package
+                    on TestPyPi, LevyCAS provides an easy-to-use API (powered by Gradio and hosted on HuggingFace)
+                    for seamless integration into applications.
+                </p>
+                <br />
+                {/* Container for image and features list */}
+                <div className="featuresContainer">
+                    {/* Features */}
+                    <div className="projectFeatures">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Parses implicit multiplication and elementary functions using a Pratt parsing algorithm.</li>
+                            <li>Performs symbolic operations including integration, differentiation, and polynomial GCD computation.</li>
+                            <li>Includes automated testing with Pytest and GitHub Actions.</li>
+                            <li>Offers an online API for web applications requiring symbolic math.</li>
+                        </ul>
+                    </div>
+                    
+
+                    {/* Image */}
+                    <Link href="/projects/LevyCAS" className="projectImage projectImageOverlay">
+                        <Image
+                            src={casexample}
+                            width="883"
+                            height="306"
+                            alt="A sample of the LevyCAS README, providing two examples on how to integrate expressions with the package."
+                        />
+                        <div>LevyCAS Demo <FaExternalLinkAlt /></div>
+                    </Link>
+
+
+                </div>
+
+                {/* Github Link */}
+                {/* <Link href="https://github.com/ajlevy246/levycas"><FaGithub /></Link> */}
 
                 {/* Close button */}
-                <button onClick={() => setIsOpen(false)}>Close</button>
+                <button className="modalBottomClose" onClick={() => setIsOpen(false)}>Close</button>
             </motion.div>
         </motion.div>
     )
 }
+
+// deprecated demo
+{/* Project demo
+<form className="mt-[3rem]" onSubmit={handleSubmit}>
+    <input className="text-xl pl-3 border-white border-[3px] h-[3rem] rounded-[5px] mr-10 mb-10" value={expr} onChange={e => setExpr(e.target.value.toLowerCase())} placeholder="Enter expression" />
+    <button className="mb-5" type="submit">Calculate</button>
+    <div className="text-2xl derivative-output">
+        <TextType deletingSpeed={0} typingSpeed={25} key={derivativeOutput} text={derivativeOutput} />
+    </div>
+</form> */}
