@@ -1,6 +1,3 @@
-/* Whole page */
-
-/* See https://codepen.io/jkantner/pen/GReNrrQ for nice radio buttons! */
 #cas-demo {
     background-origin: content-box;
     background: var(--background);
@@ -23,21 +20,50 @@
     align-items: center;
 }
 
+.input-menu {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.main-op-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.sub-op-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
 #demo-input button {
-    padding: 2rem;
-    margin: 2rem;
+    color: rgb(243, 244, 246);
+    text-transform: capitalize;
+    text-shadow: 0 0 16px #2b82f6;
+
+    font-size: 2rem;
+
+    padding: 0rem 1.25rem;
+    backdrop-filter: blur(12px);
+    background-color:  rgba(255, 255, 255, 0.15);
+    background-blend-mode: lighten;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
+                0 4px 6px -4px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    overflow: hidden;
+
     cursor: pointer;
-    border: 2px solid white;   
-    border-radius: 1rem;
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15), inset 2px 2px 8px rgba(255,255,255,0.2);
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    transition: 0.2s;
 }
 
 #demo-input button:hover {
-    scale: 1.1;
-    background-color: blue;
+    transform: scale(1.05) translateY(-0.1rem);
+    background-color: #3b82f6;
+    box-shadow: 0 0 8px 1px #3b82f6;
 }
 
 #demo-output {

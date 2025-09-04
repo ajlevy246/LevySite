@@ -33,7 +33,15 @@ export default function LevyCAS() {
             const client = await Client.connect("ajlevy246/levycas-api");
 
             // subOp is the API endpoint (e.g., 'calculus/derivative')
-            const result = await client.predict(subOp, { expr: userInput, wrt: "x" });
+            // Each endpoint in a specific category (submenu) should use
+            // the same parameters!! otherwise, too much casework
+            let result;
+            if (mainOp === "Calculus") {
+                result = await client.predict(subOp, { expr: userInput, wrt: "x" });
+            }
+            else {
+                result = await client.predict(subOp, { expr: userInput});
+            }
             setDemoOutput(result.data as string);
         } 
         
@@ -54,13 +62,13 @@ export default function LevyCAS() {
             </div>
             <form id="demo-input" onSubmit={handleSubmit}>
                 {/* Expression input */}
-                <div>
+                <div className="input-menu">
                     <input className="text-xl pl-[0.75rem] border-white border-[3px] h-[3rem] rounded-[5px]" value={userInput} onChange={e => setUserInput(e.target.value.toLowerCase())} placeholder="Enter expression" />
                     <button type="submit">Calculate</button>
                 </div>
                 
                 {/* Menu options */}
-                <div>
+                <div className="main-op-menu">
                     <button type="button" onClick={() => setMainOp("Simplification")}>Simplification</button>
                     <button type="button" onClick={() => setMainOp("Calculus")}>Calculus</button>
                     <button type="button" onClick={() => setMainOp("Polynomial")}>Polynomial</button>
