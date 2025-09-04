@@ -32,22 +32,6 @@ export default function LevyCASPopup({ setIsOpen }: LevyCASPopupProps) {
     const [ expr, setExpr ] = useState('');
     const [ derivativeOutput, setDerivativeOutput ] = useState('');
 
-    // async function handleSubmit(e: React.FormEvent) {
-    //     e.preventDefault();
-    //     setDerivativeOutput("Loading...");
-
-    //     try {
-    //         const client = await Client.connect("ajlevy246/levycas-api");
-    //         const result = await client.predict("/calculus/derivative", { expr, wrt: "x" });
-
-    //         setDerivativeOutput(result.data as string);
-    //     } 
-        
-    //     catch {
-    //         setDerivativeOutput("failed, try a different expression...")
-    //     }
-    // }
-
     return (
         // Popup container
         <motion.div

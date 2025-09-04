@@ -1,0 +1,62 @@
+/* Whole page */
+
+/* See https://codepen.io/jkantner/pen/GReNrrQ for nice radio buttons! */
+#cas-demo {
+    background-origin: content-box;
+    background: var(--background);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+    padding-top: 10%;
+}
+
+#demo-input {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    align-items: center;
+}
+
+#demo-input button {
+    padding: 2rem;
+    margin: 2rem;
+    cursor: pointer;
+    border: 2px solid white;   
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15), inset 2px 2px 8px rgba(255,255,255,0.2);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    transition: 0.2s;
+}
+
+#demo-input button:hover {
+    scale: 1.1;
+    background-color: blue;
+}
+
+#demo-output {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  
+  
+  width: 80%;
+  min-height: 3rem;
+  height: fit-content;
+  max-height: 8rem;
+  
+  overflow-y: auto;
+  font-size: 2rem;
+  text-align: center;
+  word-break: break-word;
+
+  background: rgba(255,255,255,0.05);
+  border-radius: 0.5rem;  
+
+  caret-color: rgba(0, 0, 0, 0);
+}
