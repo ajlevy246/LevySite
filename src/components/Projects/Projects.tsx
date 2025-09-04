@@ -1,7 +1,7 @@
 'use client';
 
 // Component Imports
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
@@ -37,6 +37,15 @@ function ProjectLink({ href }: { href: string }) {
 
 function LevyCASCard() {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Close popup on escape press
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  })
 
   return (
     <>
@@ -74,6 +83,15 @@ function LevyCASCard() {
 function PersonalSiteCard() {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Close popup on escape press
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  })
+
   return (
     <>
       {/* Project Card */}
@@ -109,6 +127,15 @@ function PersonalSiteCard() {
 
 function EarleyParserCard() {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Close popup on escape press
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  })
 
   return (
     <>

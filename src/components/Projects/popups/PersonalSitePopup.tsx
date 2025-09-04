@@ -58,10 +58,10 @@ export default function PersonalSitePopup({ setIsOpen }: LevyCASPopupProps) {
 
                 {/* Overview */}
                 <p>
-                    LevyCAS is a lightweight computer algebra system build in pure Python 
-                    for fast and efficient symbolic mathematics. Distributed as a Python package
-                    on TestPyPi, LevyCAS provides an easy-to-use API (powered by Gradio and hosted on HuggingFace)
-                    for seamless integration into applications.
+                    Developed with Next.js and React, this site was designed with a modern look and feel.
+                    Built to showcase my projects and showcase my skills, 
+                    this site serves both static content and contains a dynamic web app showcasing my computer algebra system,
+                    LevyCAS.
                 </p><br />
                 {/* Container for image and features list */}
                 <div className="featuresContainer">
