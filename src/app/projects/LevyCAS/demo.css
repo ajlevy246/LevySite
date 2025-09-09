@@ -1,44 +1,141 @@
-#cas-demo {
+/* https://dribbble.com/shots/21592427-Jobsly-Sidebar-UI */
+/* Demo example */
+
+.cas-demo {
     background-origin: content-box;
     background: var(--background);
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
     min-height: 100vh;
-    padding-top: 10%;
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
 }
 
-#demo-input {
-    margin-top: 25px;
+.cas-demo > nav {
+    z-index: 998;
+    position: fixed;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-45%);
+
+    height: 70vh;
+    min-height: 550px;
+    width: 25%;
+    min-width: 250px;
+    
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    
+    padding-top: 20px;
+    margin-top: 25px;
 
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #3b82f6;
+}
+
+.cas-demo > nav > h1 {
+    align-self: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cas-demo > nav > hr {
+    width: 100%;
+    border-bottom: 1px solid white;
+    margin-bottom: 25px;
+}
+
+.cas-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding-left: 10%;
+    margin-bottom: 50px;
+    align-items: flex-start;
+
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+
+.cas-menu button {
+    display: inline-flex;
+    gap: 15px;
     align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    min-width: fit-content;
+    width: 20vw;
+    padding: 0 0.5rem;
+    flex-wrap: nowrap;
+    white-space: nowrap;
 }
 
-.input-menu {
+.cas-menu button:hover {
+    transform: scale(1.1) translateX(15px);
+}
+
+.cas-menu button.selected {
+    font-weight: bold;
+    font-size: 1.5rem;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+/* Large screens, menu is permanently open, and */
+/* operations are performed on the RHS of the screen */
+@media (min-width: 1024px) {
+    .cas-demo > form {
+        width: 50%;
+        margin-right: 10%;
+    }
+}
+
+.cas-demo-output {
+  padding: 0.5rem 1rem;
+  margin-bottom: 5%;
+  
+  width: 100%;
+  height: 5rem;
+  height: fit-content;
+  max-height: 8rem;
+  
+  overflow-y: auto;
+  font-size: 2rem;
+  text-align: center;
+  word-break: break-word;
+
+  background: rgba(255,255,255,0.05);
+  border-radius: 0.5rem;  
+  box-shadow: 0 0 5px rgba(169, 169, 169, 0.35);
+
+  caret-color: rgba(0, 0, 0, 0);
+}
+
+.cas-demo-input > input {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+
+    padding-left: 0.75rem;
+
+    border: 3px solid white;
+    height: 3rem;
+    border-radius: 5px;
+}
+
+.cas-demo-input {
     display: flex;
-    gap: 1rem;
-    align-items: center;
+    gap: 25px;
+    padding-left: 25px;
 }
 
-.main-op-menu {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-}
-
-.sub-op-menu {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-}
-
-#demo-input button {
+.cas-demo-input > button {
     color: rgb(243, 244, 246);
     text-transform: capitalize;
     text-shadow: 0 0 16px #2b82f6;
@@ -60,29 +157,8 @@
     cursor: pointer;
 }
 
-#demo-input button:hover {
+.cas-demo-input > button:hover {
     transform: scale(1.05) translateY(-0.1rem);
-    background-color: #3b82f6;
-    box-shadow: 0 0 8px 1px #3b82f6;
-}
-
-#demo-output {
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
-  
-  
-  width: 80%;
-  min-height: 3rem;
-  height: fit-content;
-  max-height: 8rem;
-  
-  overflow-y: auto;
-  font-size: 2rem;
-  text-align: center;
-  word-break: break-word;
-
-  background: rgba(255,255,255,0.05);
-  border-radius: 0.5rem;  
-
-  caret-color: rgba(0, 0, 0, 0);
+    background-color: rgb(59, 130, 246);
+    box-shadow: 0 0 8px 1px rgb(59, 130, 246);
 }

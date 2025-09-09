@@ -6,9 +6,16 @@ import { Client } from "@gradio/client";
 
 // Components
 import TextType from "@/blocks/TextAnimations/TextType/TextType";
+import { AnimatePresence, motion } from "motion/react";
 
 // Styles
 import "./demo.css";
+
+// Icons
+import { DiStreamline } from "react-icons/di"; // Simplification
+import { FaCalculator } from "react-icons/fa6"; // Numerical
+import { MdFunctions } from "react-icons/md"; // Polynomial
+import { TbMathIntegralX } from "react-icons/tb"; // Calculus
 
 // MENU OPTIONS
 // Main: Simplification, Calculus, Polynomial, Numerical
@@ -18,16 +25,16 @@ import "./demo.css";
 // Numerical: Prime Check, Integer Factorization
 
 export default function LevyCAS() {
+    const [navOpen, setNavOpen] = useState(true);
     const [demoOutput, setDemoOutput] = useState('');
-    // Default choice is differentiation
     const [userInput, setUserInput] = useState('');
     const [mainOp, setMainOp] = useState('Calculus');
     const [subOp, setSubOp] = useState('/calculus/derivative');
+    
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         setDemoOutput("Loading...");
-
 
         try {
             const client = await Client.connect("ajlevy246/levycas-api");
@@ -51,65 +58,167 @@ export default function LevyCAS() {
     }
 
     return (
-        <section id="cas-demo">
-            <div id="demo-output">
-                <TextType
-                    text={demoOutput}
-                    key={demoOutput} 
-                    deletingSpeed={0}
-                    typingSpeed={25}
-                />
-            </div>
-            <form id="demo-input" onSubmit={handleSubmit}>
-                {/* Expression input */}
-                <div className="input-menu">
-                    <input className="text-xl pl-[0.75rem] border-white border-[3px] h-[3rem] rounded-[5px]" value={userInput} onChange={e => setUserInput(e.target.value.toLowerCase())} placeholder="Enter expression" />
-                    <button type="submit">Calculate</button>
-                </div>
-                
-                {/* Menu options */}
-                <div className="main-op-menu">
-                    <button type="button" onClick={() => setMainOp("Simplification")}>Simplification</button>
-                    <button type="button" onClick={() => setMainOp("Calculus")}>Calculus</button>
-                    <button type="button" onClick={() => setMainOp("Polynomial")}>Polynomial</button>
-                    <button type="button" onClick={() => setMainOp("Numerical")}>Numerical</button>
+        <section className="cas-demo">
+            { navOpen && 
+            <nav>
+                {/* Navbar header */}
+                <h1>Menu</h1>
+
+                <hr />
+
+                {/* Main operation menu */}
+                <div className="cas-menu">
+                    <button
+                        className={mainOp === "Simplification" ? "selected" : ""}
+                        onClick={() => {setSubOp("/simp/auto"); setMainOp("Simplification")}}
+                    >
+                        <DiStreamline /> Simplification
+                    </button>
+                    <button 
+                        className={mainOp === "Calculus" ? "selected" : ""}
+                        onClick={() => {setSubOp("/calculus/derivative"); setMainOp("Calculus")}}
+                    >
+                            <TbMathIntegralX /> Calculus
+                    </button>
+                    <button 
+                        className={mainOp === "Numerical" ? "selected" : ""}
+                        onClick={() => {setSubOp("/num/prime"); setMainOp("Numerical")}}
+                    >
+                            <FaCalculator />Numerical
+                    </button>
+                    <button 
+                        className={mainOp === "Polynomial" ? "selected" : ""}
+                        onClick={() => {setSubOp("/poly/gcd"); setMainOp("Polynomial")}}
+                    >
+                        <MdFunctions />Polynomial
+                    </button>
                 </div>
 
-                {/* Operation Options */}
+                <hr />
+
+                {/* Sub operation menu */}
                 <div>
-                    {
-                        mainOp == "Simplification" && (
-                            <section className="sub-op-menu">
-                                <button type="button" onClick={() => setSubOp("/simp/auto")}>Auto Simplification</button>
-                                <button type="button" onClick={() => setSubOp("/simp/rationalize")}>Rationalization</button>
-                                <button type="button" onClick={() => setSubOp("/simp/trig")}>Trig Simplification</button>
-                            </section>
-                        )
-                    }
-                    {
-                        mainOp == "Calculus" && (
-                            <section className="sub-op-menu">
-                                <button type="button" onClick={() => setSubOp("/calculus/derivative")}>Differentiate</button>
-                                <button type="button" onClick={() => setSubOp("/calculus/integrate")}>Integrate</button>
-                            </section>
-                        )
-                    }
+                    <AnimatePresence initial={false} mode="wait">
+                        { mainOp == "Simplification" && (
+                                    <motion.section className="cas-menu cas-sub-menu"
+                                        key="Simplification"
+                                        initial={{ opacity: 0, x: -50 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0, x: 50 }}
+                                        transition={{ duration: 0.35, ease: 'easeIn' }}
+                                    >
+                                        <button 
+                                            className={subOp === "/simp/auto" ? "selected" : ""}
+                                            type="button" onClick={() => setSubOp("/simp/auto")}
+                                        >
+                                            Parse
+                                        </button>
+                                        <button 
+                                            className={subOp === "/simp/rationalize" ? "selected" : ""}
+                                            type="button" onClick={() => setSubOp("/simp/rationalize")}
+                                        >
+                                            Rationalization
+                                        </button>
+                                        <button
+                                            className={subOp === "/simp/trig" ? "selected" : ""}
+                                            type="button" onClick={() => setSubOp("/simp/trig")}
+                                        >
+                                            Trig Simplify
+                                        </button>
+                                    </motion.section>
+                            )
+                            
+                        }
+                        { mainOp == "Calculus" && (
+                                <motion.section className="cas-menu cas-sub-menu"
+                                    key="Calculus"
+                                    initial={{ opacity: 0, x: -50 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: 50 }}
+                                    transition={{ duration: 0.35, ease: 'easeIn' }}
+                                >
+                                    <button 
+                                        className={subOp === "/calculus/derivative" ? "selected" : ""}
+                                        type="button" onClick={() => setSubOp("/calculus/derivative")}
+                                    >
+                                        Differentiate
+                                    </button>
+                                    <button 
+                                        className={subOp === "/calculus/integrate" ? "selected" : ""}
+                                        type="button" onClick={() => setSubOp("/calculus/integrate")}
+                                    >
+                                        Integrate
+                                    </button>
+                                </motion.section>
+                            )
+                        }
                     {
                         mainOp == "Polynomial" && (
-                            <section className="sub-op-menu">
-                                <button type="button" onClick={() => setSubOp("/poly/gcd")}>Greatest Common Divisor</button>
-                                <button type="button" onClick={() => setSubOp("/poly/sqf")}>Square-Free Factor</button>
-                            </section>
+                            <motion.section className="cas-menu cas-sub-menu"
+                                    key="Polynomial"
+                                    initial={{ opacity: 0, x: -50 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: 50 }}
+                                    transition={{ duration: 0.35, ease: 'easeIn' }}
+                                >
+                                <button 
+                                    className={subOp === "/poly/gcd" ? "selected" : ""}
+                                    type="button" onClick={() => setSubOp("/poly/gcd")}
+                                >
+                                    Polynomial GCD
+                                </button>
+                                <button
+                                    className={subOp === "/poly/sqf" ? "selected" : ""}
+                                    type="button" onClick={() => setSubOp("/poly/sqf")}
+                                >
+                                    Sq-Free Factor
+                                </button>
+                            </motion.section>
                         )
                     }
                     {
                         mainOp === "Numerical" && (
-                            <section className="sub-op-menu">
-                                <button type="button" onClick={() => setSubOp("/num/prime")}>Prime Check</button>
-                                <button type="button" onClick={() => setSubOp("/num/factor")}>Integer Factorization</button>
-                            </section>
+                            <motion.section className="cas-menu cas-sub-menu"
+                                key="Numerical"
+                                initial={{ opacity: 0, x: -50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: 50 }}
+                                transition={{ duration: 0.35, ease: 'easeIn' }}
+                            >
+                                <button 
+                                    className={subOp === "/num/prime" ? "selected" : ""}
+                                    type="button" onClick={() => setSubOp("/num/prime")}
+                                >
+                                    Prime Check
+                                </button>
+                                <button 
+                                    className={subOp === "/num/factor" ? "selected" : ""}
+                                    type="button" onClick={() => setSubOp("/num/factor")}
+                                >
+                                    Integer Factor
+                                </button>
+                            </motion.section>
                         )
                     }
+                    </AnimatePresence>
+                </div>
+            </nav>}
+             
+
+            <form onSubmit={handleSubmit}>
+                <h2 className="mb-2 text-xl">Endpoint: {subOp}</h2>
+                <div className="cas-demo-output">
+                    <TextType
+                        text={demoOutput}
+                        key={demoOutput} 
+                        deletingSpeed={0}
+                        typingSpeed={25}
+                    />
+                </div>
+                
+                <div className="cas-demo-input">
+                    <input className="cas-demo-input-field" value={userInput} onChange={e => setUserInput(e.target.value.toLowerCase())} placeholder="Enter expression" />
+                    <button type="submit">Calculate</button>
                 </div>
             </form>
         </section>
