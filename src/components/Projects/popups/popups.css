@@ -154,9 +154,8 @@
 
 /* Close Button */
 .projectBox .modalBottomClose {
-    position: fixed;
-    bottom: 100px;
-    right: auto;
+    position: sticky;
+    bottom: 25px;
     align-self: center;
     display: none;
 
@@ -166,13 +165,15 @@
 
     font-size: 1.5rem;
     line-height: 2rem;
+    min-height: 35px;
 
     padding: 0rem 1.25rem;
-    backdrop-filter: blur(12px);
-    background-color:  rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    background-color:  rgba(255, 255, 255, 0.05);
     background-blend-mode: lighten;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
-                0 4px 6px -4px rgba(0, 0, 0, 0.2);
+                0 4px 6px -4px rgba(0, 0, 0, 0.2),
+                inset 0 0 7px rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 0.5rem;
 

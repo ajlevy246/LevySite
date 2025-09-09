@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation";
-import React, { useState } from "react";
-import { animate, AnimatePresence, motion, useScroll, useMotionValueEvent } from "motion/react";
+import React, { useState, useEffect } from "react";
+import { animate, AnimatePresence, motion, useScroll } from "motion/react";
 import { MdPictureAsPdf } from "react-icons/md";
 import { LuMails } from "react-icons/lu";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -22,9 +22,21 @@ export default function Navbar() {
     const pathname = usePathname();
     const [ aboveIntro, setAboveIntro ] = useState(true);
 
-    useMotionValueEvent(scrollY, 'change', (current) => {
-        setAboveIntro(current <= window.innerHeight * 0.1 ? true : false);
-    })
+    // Custom hook: if not on homescreen, navbar is always minimized.
+    // Otherwise, depends on scroll position.
+    useEffect(() => {
+        if (pathname !== "/") {
+            setAboveIntro(false);
+            return;
+        }
+        
+        const unsubscribe = scrollY.on('change', (current) => {
+            setAboveIntro(current <= window.innerHeight * 0.1);
+        });
+
+        return () => unsubscribe();
+
+    }, [scrollY, pathname]);
 
     const scrollHome = (e: React.MouseEvent<HTMLAnchorElement>) => {
         // If we are already on the homepage, scroll up
