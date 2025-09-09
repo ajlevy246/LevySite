@@ -63,9 +63,9 @@ export default function Home() {
         ]}
         />
       </div>
+      <Projects />
       <Education />
       <Honors />
-      <Projects />
       </section>
     </main>
   )
