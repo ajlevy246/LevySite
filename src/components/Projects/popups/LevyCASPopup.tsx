@@ -29,8 +29,6 @@ type LevyCASPopupProps = {
 };
 
 export default function LevyCASPopup({ setIsOpen }: LevyCASPopupProps) {
-    const [ expr, setExpr ] = useState('');
-    const [ derivativeOutput, setDerivativeOutput ] = useState('');
 
     return (
         // Popup container
@@ -109,13 +107,3 @@ export default function LevyCASPopup({ setIsOpen }: LevyCASPopupProps) {
         </motion.div>
     )
 }
-
-// deprecated demo
-{/* Project demo
-<form className="mt-[3rem]" onSubmit={handleSubmit}>
-    <input className="text-xl pl-3 border-white border-[3px] h-[3rem] rounded-[5px] mr-10 mb-10" value={expr} onChange={e => setExpr(e.target.value.toLowerCase())} placeholder="Enter expression" />
-    <button className="mb-5" type="submit">Calculate</button>
-    <div className="text-2xl derivative-output">
-        <TextType deletingSpeed={0} typingSpeed={25} key={derivativeOutput} text={derivativeOutput} />
-    </div>
-</form> */}

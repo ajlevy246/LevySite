@@ -26,7 +26,7 @@ import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa"; // Menu 
 // Numerical: Prime Check, Integer Factorization
 
 export default function LevyCAS() {
-    const [navOpen, setNavOpen] = useState(true);
+    const [navOpen, setNavOpen] = useState(false);
     const [demoOutput, setDemoOutput] = useState('');
     const [userInput, setUserInput] = useState('');
     const [mainOp, setMainOp] = useState('Calculus');
@@ -106,9 +106,9 @@ export default function LevyCAS() {
                         { mainOp == "Simplification" && (
                                     <motion.section className="cas-menu cas-sub-menu"
                                         key="Simplification"
-                                        initial={{ opacity: 0, x: -50 }}
+                                        initial={{ opacity: 0, x: -25 }}
                                         animate={{ opacity: 1, x: 0 }}
-                                        exit={{ opacity: 0, x: 50 }}
+                                        exit={{ opacity: 0, x: 25 }}
                                         transition={{ duration: 0.35, ease: 'easeIn' }}
                                     >
                                         <button 
@@ -136,9 +136,9 @@ export default function LevyCAS() {
                         { mainOp == "Calculus" && (
                                 <motion.section className="cas-menu cas-sub-menu"
                                     key="Calculus"
-                                    initial={{ opacity: 0, x: -50 }}
+                                    initial={{ opacity: 0, x: -25 }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: 50 }}
+                                    exit={{ opacity: 0, x: 25 }}
                                     transition={{ duration: 0.35, ease: 'easeIn' }}
                                 >
                                     <button 
@@ -160,9 +160,9 @@ export default function LevyCAS() {
                         mainOp == "Polynomial" && (
                             <motion.section className="cas-menu cas-sub-menu"
                                     key="Polynomial"
-                                    initial={{ opacity: 0, x: -50 }}
+                                    initial={{ opacity: 0, x: -25 }}
                                     animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: 50 }}
+                                    exit={{ opacity: 0, x: 25 }}
                                     transition={{ duration: 0.35, ease: 'easeIn' }}
                                 >
                                 <button 
@@ -184,9 +184,9 @@ export default function LevyCAS() {
                         mainOp === "Numerical" && (
                             <motion.section className="cas-menu cas-sub-menu"
                                 key="Numerical"
-                                initial={{ opacity: 0, x: -50 }}
+                                initial={{ opacity: 0, x: -25 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: 50 }}
+                                exit={{ opacity: 0, x: 25 }}
                                 transition={{ duration: 0.35, ease: 'easeIn' }}
                             >
                                 <button 
@@ -226,11 +226,34 @@ export default function LevyCAS() {
                 </div>
                 
                 <div className="cas-demo-input">
-                    <p>
-                        A description of the selected operation will go here. 
-                        This is some sample text to help me style the description, 
-                        until some more explanatory text is written.
-                    </p>
+                    {/* Operation descriptions */}
+                    {mainOp === "Calculus" && (
+                        <p>
+                            LevyCAS supports both differentiation and symbolic integration.
+                            Enter a function in terms of the variable &apos;x&apos; and press
+                            the calculate button to see the result with respect to x.
+                        </p>
+                    )}
+                    {mainOp === "Simplification" && (
+                        <p>
+                            LevyCAS automatically simplifies many expressions.
+                            To see some examples of these simplification routines, enter an expression
+                            to see it simplified.
+                        </p>
+                    )}
+                    {mainOp === "Numerical" && (
+                        <p>
+                            Implemented in LevyCAS are several fundamental operations 
+                            on integers. Enter a simple expression evaluating to an integer,
+                            and press the calculate button to check primality or factor.
+                        </p>
+                    )}{mainOp === "Polynomial" && (
+                        <p>
+                            Some powerful multivariate polynomial algorithms are included in LevyCAS,
+                            including Greatest Common Divisors and a square-free factoring routine. Enter two polynomials
+                            and press calculate to see these routines work.
+                        </p>
+                    )}
                     <input className="cas-demo-input-field" value={userInput} onChange={e => setUserInput(e.target.value.toLowerCase())} placeholder="Enter expression" />
                     <button type="submit">Calculate</button>
                 </div>
