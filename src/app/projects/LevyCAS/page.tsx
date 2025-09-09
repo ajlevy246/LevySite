@@ -12,10 +12,11 @@ import { AnimatePresence, motion } from "motion/react";
 import "./demo.css";
 
 // Icons
-import { DiStreamline } from "react-icons/di"; // Simplification
+import { BiMath } from "react-icons/bi"; // Simplification
 import { FaCalculator } from "react-icons/fa6"; // Numerical
 import { MdFunctions } from "react-icons/md"; // Polynomial
 import { TbMathIntegralX } from "react-icons/tb"; // Calculus
+import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa"; // Menu Open/Close
 
 // MENU OPTIONS
 // Main: Simplification, Calculus, Polynomial, Numerical
@@ -59,8 +60,11 @@ export default function LevyCAS() {
 
     return (
         <section className="cas-demo">
-            { navOpen && 
-            <nav>
+        <motion.nav
+                initial={{ x: 0 }}
+                animate={{ x: navOpen ? 0 : "-100%" }}
+                transition={{ type: "spring", stiffness: 300, damping: 30, bounce: 0 }}
+            >
                 {/* Navbar header */}
                 <h1>Menu</h1>
 
@@ -72,7 +76,7 @@ export default function LevyCAS() {
                         className={mainOp === "Simplification" ? "selected" : ""}
                         onClick={() => {setSubOp("/simp/auto"); setMainOp("Simplification")}}
                     >
-                        <DiStreamline /> Simplification
+                        <BiMath /> Simplification
                     </button>
                     <button 
                         className={mainOp === "Calculus" ? "selected" : ""}
@@ -202,9 +206,14 @@ export default function LevyCAS() {
                     }
                     </AnimatePresence>
                 </div>
-            </nav>}
+
+                <button className="open-close" onClick={() => setNavOpen(!navOpen)}>
+                    <div className={`${navOpen ? 'open' : ''}`} />
+                </button>
+            </motion.nav>
              
 
+            <h1>LevyCAS Interactive Demo</h1>
             <form onSubmit={handleSubmit}>
                 <h2 className="mb-2 text-xl">Endpoint: {subOp}</h2>
                 <div className="cas-demo-output">
@@ -217,6 +226,11 @@ export default function LevyCAS() {
                 </div>
                 
                 <div className="cas-demo-input">
+                    <p>
+                        A description of the selected operation will go here. 
+                        This is some sample text to help me style the description, 
+                        until some more explanatory text is written.
+                    </p>
                     <input className="cas-demo-input-field" value={userInput} onChange={e => setUserInput(e.target.value.toLowerCase())} placeholder="Enter expression" />
                     <button type="submit">Calculate</button>
                 </div>

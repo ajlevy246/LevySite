@@ -8,16 +8,25 @@
     min-height: 100vh;
 
     display: flex;
-    justify-content: right;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+}
+
+.cas-demo > h1 {
+    font-size: 2rem;
+    margin-bottom: 50px;
+    text-shadow: 0 0 4px blue;
+    font-weight: bold;
+    text-align: center;
 }
 
 .cas-demo > nav {
     z-index: 998;
-    position: fixed;
+    position: absolute;
     left: 15px;
     top: 50%;
-    transform: translateY(-45%);
+    translate: 0 -45%;
 
     height: 70vh;
     min-height: 550px;
@@ -28,7 +37,6 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    overflow: hidden;
     
     padding-top: 20px;
     margin-top: 25px;
@@ -49,6 +57,47 @@
     width: 100%;
     border-bottom: 1px solid white;
     margin-bottom: 25px;
+}
+
+.cas-demo > nav .open-close::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -8;
+  transform: translateY(-50%);
+  
+  width: 30px;
+  height: 60px;
+  background: black;
+  border-radius: 0 8px 8px 0;
+  border: 1px solid white;
+  box-shadow: 3px 0 5px -1px #3b82f6,
+              inset 2px 0 15px -2px white;
+}
+
+.cas-demo > nav .open-close {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.cas-demo > nav .open-close > div {
+  position: relative;
+  left: 2;
+  width: 0;
+  height: 0;
+  caret-color: transparent;
+
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid white;
+  transition: transform 0.3s ease;
+}
+
+.cas-demo > nav .open-close > div.open {
+  transform: rotate(180deg);
 }
 
 .cas-menu {
@@ -75,6 +124,7 @@
     padding: 0 0.5rem;
     flex-wrap: nowrap;
     white-space: nowrap;
+    caret-color: transparent;
 }
 
 .cas-menu button:hover {
@@ -88,13 +138,8 @@
     border-radius: 5px;
 }
 
-/* Large screens, menu is permanently open, and */
-/* operations are performed on the RHS of the screen */
-@media (min-width: 1024px) {
-    .cas-demo > form {
-        width: 50%;
-        margin-right: 10%;
-    }
+.cas-demo > form {
+    width: 75vw;
 }
 
 .cas-demo-output {
@@ -118,21 +163,42 @@
   caret-color: rgba(0, 0, 0, 0);
 }
 
+.cas-demo-input {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 25px;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .cas-demo-input {
+        flex-direction: row;
+        padding-left: 25px;
+    }
+}
+
+.cas-demo-input > p {
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .cas-demo-input > p {
+        max-width: 50%;
+        
+    }
+}
+
 .cas-demo-input > input {
     font-size: 1.5rem;
     line-height: 2.5rem;
 
     padding-left: 0.75rem;
+    min-width: 25%;
 
     border: 3px solid white;
     height: 3rem;
     border-radius: 5px;
-}
-
-.cas-demo-input {
-    display: flex;
-    gap: 25px;
-    padding-left: 25px;
 }
 
 .cas-demo-input > button {
@@ -140,9 +206,10 @@
     text-transform: capitalize;
     text-shadow: 0 0 16px #2b82f6;
 
-    font-size: 2rem;
+    font-size: 1.75rem;
 
-    padding: 0rem 1.25rem;
+    width: 175px;
+    text-align: center;
     backdrop-filter: blur(12px);
     background-color:  rgba(255, 255, 255, 0.15);
     background-blend-mode: lighten;
