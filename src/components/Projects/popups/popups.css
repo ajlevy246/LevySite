@@ -315,3 +315,25 @@
   }
   
 }
+
+.modalGithubLink {
+  position: relative;
+  align-self: center;
+  font-size: 2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 0.3rem;
+}
+
+.modalGithubLink:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 16px 4px #3b82f6;
+  background: #3b82f6;
+  color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .modalGithubLink {
+    align-self: flex-start;
+    left: 10%;
+  }
+}

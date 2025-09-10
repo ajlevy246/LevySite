@@ -99,7 +99,7 @@ export default function LevyCASPopup({ setIsOpen }: LevyCASPopupProps) {
                 </div>
 
                 {/* Github Link */}
-                {/* <Link href="https://github.com/ajlevy246/levycas"><FaGithub /></Link> */}
+                <Link className="modalGithubLink" href="https://github.com/ajlevy246/levycas"><FaGithub /></Link>
 
                 {/* Close button */}
                 <button className="modalBottomClose" onClick={() => setIsOpen(false)}>Close</button>

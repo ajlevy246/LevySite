@@ -91,6 +91,9 @@ export default function EarleyParserPopup({ setIsOpen }: LevyCASPopupProps) {
                 {/* Github Link */}
                 {/* <Link href="https://github.com/ajlevy246/levycas"><FaGithub /></Link> */}
 
+
+                <Link className="modalGithubLink" href="https://github.com/ajlevy246/"><FaGithub /></Link>
+
                 {/* Close button */}
                 <button className="modalBottomClose" onClick={() => setIsOpen(false)}>Close</button>
             </motion.div>
