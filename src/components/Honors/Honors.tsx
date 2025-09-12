@@ -15,30 +15,36 @@ export default function Honors() {
             {/* Honors List */}
             <div>
                 {/* Honors card */}
-                <motion.ul
-                    initial={{ opacity: 0, x: -65 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                >
+                <section>
                     <h1>Honors</h1>  
-                    <li><b>The Clifford Beck Award for Excellency in Physics</b> - <i>Montgomery College, 2023</i></li>
-                    <li><b>Eagle Scout</b> - <i>Troop 457 Rockville, MD, 2023</i></li>
-                    <li><b>AP Scholar with Distinction</b> - <i>College Board, 2021</i></li>
-                </motion.ul>
+                    <motion.ul
+                        initial={{ opacity: 0, x: -65 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                    >
+                        
+                        <li><b>The Clifford Beck Award for Excellency in Physics</b> - <i>Montgomery College, 2023</i></li>
+                        <li><b>Eagle Scout</b> - <i>Troop 457 Rockville, MD, 2023</i></li>
+                        <li><b>AP Scholar with Distinction</b> - <i>College Board, 2021</i></li>
+                    </motion.ul>
+                </section>
 
-                {/* Awards card */}
-               <motion.ul
-                    initial={{ opacity: 0, x: 65 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                >
+                <section>
                     <h1>Awards</h1>
-                    <li><b>T. W. Hatcher Scholarship</b> - <i>Virginia Tech, 2025</i></li>
-                    <li><b>Ray A. Gaskins Scholarship</b> - <i>Virginia Tech, 2024 & 2025</i></li>
-                    <li><b>Richard L. and Georgia W. Kimball Scholarship</b> - <i>Virginia Tech, 2024</i></li>
-                </motion.ul>
+                    {/* Awards card */}
+                    <motion.ul
+                        initial={{ opacity: 0, x: 65 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                    >
+                        
+                        <li><b>T. W. Hatcher Scholarship</b> - <i>Virginia Tech, 2025</i></li>
+                        <li><b>Ray A. Gaskins Scholarship</b> - <i>Virginia Tech, 2024 & 2025</i></li>
+                        <li><b>Richard L. and Georgia W. Kimball Scholarship</b> - <i>Virginia Tech, 2024</i></li>
+                    </motion.ul>
+                </section>
             </div>
         </section>
     )
