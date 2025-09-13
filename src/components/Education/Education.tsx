@@ -71,7 +71,7 @@ function SherwoodHighSchool() {
 
 export default function Education() {
     return (
-        <section id="education" className="pt-[25%] md:pt-[8%]">
+        <section id="education" className="mt-[25%] lg:mt-[50px]">
             <div className="sectionTitle text-center text-5xl">Education</div>
             
             {/* Timeline */}
