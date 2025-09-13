@@ -171,7 +171,7 @@ function EarleyParserCard() {
 
 export default function Projects() {
   return (
-    <section id="projects" className="min-h-[85vh] pt-[25%] md:pt-[8%]">
+    <section id="projects" className="pt-[25%] md:pt-[8%]">
       <div className="sectionTitle text-5xl text-center mb-[30px] lg:mb-[20px]"> Projects </div>
       <div className="text-3xl lg:text-2xl text-center mb-[15%] lg:mb-[5rem]">click on a project to learn more</div>
       <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-[2%] space-y-[10%]">
