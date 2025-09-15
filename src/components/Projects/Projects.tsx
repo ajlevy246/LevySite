@@ -3,7 +3,7 @@
 // Component Imports
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -60,13 +60,15 @@ function LevyCASCard() {
         <div className="projectCard">
           <h1>LevyCAS <ProjectLink href="https://github.com/ajlevy246/LevyCAS" /></h1>
           <p>A pure python computer algebra system with a Pratt parser, complete with automatic simplification, symbolic integration and differentation, and more.</p>
-          <div className="projectImgWrapper"><Image
+          <Link className="projectImgWrapper projectImageOverlay" href="/projects/LevyCAS">
+          <Image
             className=""
             src={casdemo}
             width="1871"
             height="573" 
             alt="The LevyCAS demo; showing a menu with options for calculus, numerical, and polynomial operations with examples"
-          /></div>
+          /><div>LevyCAS Demo <FaExternalLinkAlt /></div>
+          </Link>
         </div>
       </motion.div>
 
