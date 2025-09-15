@@ -149,13 +149,16 @@ function EarleyParserCard() {
       >
         <div className="projectCard">
           <h1>Earley Parser <ProjectLink href="https://github.com/ajlevy246/" /></h1>
-          <p>A powerful python implementation of the Earley algorithm for user-defined context-free grammars.</p>
-          <div className="projectImgWrapper"><Image 
-            src={earleydemo}
-            width="1043"
-            height="607"
-            alt="Pseudocode for the first steps of the Earley parsing algorithm, taken from wikipedia"
-          /></div>
+
+            <p>A powerful python implementation of the Earley algorithm for user-defined context-free grammars.</p>
+          <section>
+            <div className="projectImgWrapper"><Image 
+              src={earleydemo}
+              width="1043"
+              height="607"
+              alt="Pseudocode for the first steps of the Earley parsing algorithm, taken from wikipedia"
+            /></div>
+          </section>
         </div>
       </motion.div>
 

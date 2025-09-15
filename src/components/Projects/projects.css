@@ -37,13 +37,22 @@
   min-height: 75px;
 }
 
+.projectCard section {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 /* Project image wrapper */
 .projectImgWrapper {
   width: 100%;        /* full card width */
-  height: 180px;      /* fixed height (adjust as you like) */
+  height: 180px;      /* fixed height */
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 4px 15px white;
+  border: 1px solid white;
+  border-radius: 2px;
 }
 
 /* Project image */
