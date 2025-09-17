@@ -112,7 +112,7 @@ function PersonalSiteCard() {
             src={sitedemo}
             width="2535"
             height="1314"
-            alt="A screenshot of the homepage of my personal site, wiht a background image of Stowe, Vermont and an image of me in the foreground."
+            alt="A screenshot of the homepage of my personal site, with a background image of Stowe, Vermont and an image of me in the foreground."
           /></div>
         </div>
       </motion.div>
@@ -150,17 +150,15 @@ function EarleyParserCard() {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <div className="projectCard">
-          <h1>Earley Parser <ProjectLink href="https://github.com/ajlevy246/" /></h1>
-
-            <p>A powerful python implementation of the Earley algorithm for user-defined context-free grammars.</p>
-          <section>
-            <div className="projectImgWrapper"><Image 
+            <h1>Earley Parser <ProjectLink href="https://github.com/ajlevy246/" /></h1>
+            <p>A powerful python implementation of the Earley algorithm for user-defined context-free grammars. Implemented as a Python package on TestPyPi.</p>
+            <div className="projectImgWrapper">
+            <Image 
               src={earleydemo}
               width="1043"
               height="607"
               alt="Pseudocode for the first steps of the Earley parsing algorithm, taken from wikipedia"
             /></div>
-          </section>
         </div>
       </motion.div>
 

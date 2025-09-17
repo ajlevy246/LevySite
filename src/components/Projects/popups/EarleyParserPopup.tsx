@@ -77,11 +77,10 @@ export default function EarleyParserPopup({ setIsOpen }: LevyCASPopupProps) {
                     {/* Image */}
                     <div className="projectImage">
                         <Image
-                            className="projectImage"
                             src={earleydemo}
                             width="883"
                             height="306"
-                            alt="A sample of the LevyCAS README, providing two examples on how to integrate expressions with the package."
+                            alt="Earley's original algorithm, on wikipedia"
                         />
                     </div>
 

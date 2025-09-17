@@ -62,7 +62,8 @@
 .projectCard img {
   max-height: 100%;
   max-width: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  aspect-ratio: 16/9;
 }
 
 /* Github links */

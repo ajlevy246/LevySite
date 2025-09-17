@@ -83,7 +83,7 @@ export default function PersonalSitePopup({ setIsOpen }: LevyCASPopupProps) {
                             src={sitedemo}
                             width="883"
                             height="306"
-                            alt="A sample of the LevyCAS README, providing two examples on how to integrate expressions with the package."
+                            alt="A screenshot of the homepage of this very site."
                         />
                     </div>
 
