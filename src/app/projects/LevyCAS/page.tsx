@@ -2,11 +2,12 @@
 
 // State
 import { ButtonHTMLAttributes, useState } from "react";
-import { Client } from "@gradio/client";
+import { Client, type SpaceStatus } from "@gradio/client";
 
 // Components
 import TextType from "@/blocks/TextAnimations/TextType/TextType";
 import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
 
 // Styles
 import "./demo.css";
@@ -32,14 +33,39 @@ export default function LevyCAS() {
     const [mainOp, setMainOp] = useState('Calculus');
     const [subOp, setSubOp] = useState('/calculus/derivative');
     
+    interface SpaceStatus { //See https://www.gradio.app/docs/js-client
+        status: "sleeping" | "running" | "building" | "error" | "stopped" | "starting" | "space_error" | "paused";
+        detail:
+            | "SLEEPING"
+            | "RUNNING"
+            | "RUNNING_BUILDING"
+            | "BUILDING"
+            | "NOT_FOUND"
+            | "APP_STARTING"
+            | "NO_APP_FILE"
+            | "CONFIG_ERROR"
+            | "BUILD_ERROR"
+            | "RUNTIME_ERROR"
+            | "PAUSED";
+        load_status: "pending" | "error" | "complete" | "generating";
+        message: string;
+    }
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         setDemoOutput("Loading...");
 
         try {
-            const client = await Client.connect("ajlevy246/levycas-api");
-
+            // const client = await Client.connect("ajlevy246/levycas-api", {status_callback: (space_status: SpaceStatus) => console.log(space_status.status)});
+            const client = await Client.connect("ajlevy246/levycas-api", {status_callback: (space_status: SpaceStatus) => {
+                try {
+                    if (space_status.status != "running") {
+                        setDemoOutput(space_status.message);
+                    }
+                } catch {
+                }
+            }});
+            
             // subOp is the API endpoint (e.g., 'calculus/derivative')
             // Each endpoint in a specific category (submenu) should use
             // the same parameters!! otherwise, too much casework
@@ -213,7 +239,8 @@ export default function LevyCAS() {
             </motion.nav>
              
 
-            <h1>LevyCAS Interactive Demo</h1>
+            <h1>LevyCAS Demo</h1>
+            <h2>Check out the API and see its status <Link target="_blank" rel="noreferrer noopener" href="https://huggingface.co/spaces/ajlevy246/levycas-api" >[here]</Link></h2>
             <form onSubmit={handleSubmit}>
                 <h2 className="mb-2 text-xl">Endpoint: {subOp}</h2>
                 <div className="cas-demo-output">

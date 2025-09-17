@@ -15,10 +15,27 @@
 
 .cas-demo > h1 {
     font-size: 2rem;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     text-shadow: 0 0 4px blue;
     font-weight: bold;
     text-align: center;
+}
+
+.cas-demo > h2 {
+    font-size: 1.25rem;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.cas-demo > h2 > a {
+    display: inline-flex;
+    transition: all 0.2s ease;
+    color: #c3daff
+}
+
+.cas-demo > h2 > a:hover {
+    color: #3b82f6;
+    transform: scale(1.05) translateY(-2px);
 }
 
 .cas-demo > nav {
