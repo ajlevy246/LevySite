@@ -59,6 +59,9 @@ export default function LevyCAS() {
             // const client = await Client.connect("ajlevy246/levycas-api", {status_callback: (space_status: SpaceStatus) => console.log(space_status.status)});
             const client = await Client.connect("ajlevy246/levycas-api", {status_callback: (space_status: SpaceStatus) => {
                 try {
+                    if (space_status.status == "sleeping") {
+                        setDemoOutput("Space is loading... please wait (~60s)")
+                    }
                     if (space_status.status != "running") {
                         setDemoOutput(space_status.message);
                     }
