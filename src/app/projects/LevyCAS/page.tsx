@@ -63,7 +63,12 @@ export default function LevyCAS() {
                         setDemoOutput("Space is loading... please wait (~60s)")
                     }
                     if (space_status.status != "running") {
-                        setDemoOutput(space_status.message);
+                        if (space_status.message == "Could not get space status.") {
+                            setDemoOutput("Loading...")
+                        }
+                        else {
+                            setDemoOutput(space_status.message);
+                        }
                     }
                 } catch {
                 }
