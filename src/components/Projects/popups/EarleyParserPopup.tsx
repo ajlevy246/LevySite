@@ -46,7 +46,7 @@ export default function EarleyParserPopup({ setIsOpen }: LevyCASPopupProps) {
                 <button className="modalTopClose" onClick={() => setIsOpen(false)}><FiX /></button>
 
                 {/* Headers */}
-                <h1>Earley Parser Generator</h1>
+                <h1>Parser Generator</h1>
                 <h2>Powerful Parser for E-BNF Context-Free Gramars</h2>
                 
                 {/* Tech Stack */}
