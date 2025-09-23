@@ -18,8 +18,8 @@ import "./globals.css";
 // })
 
 export const metadata: Metadata = {
-  title: "Alex Levy - Personal",
-  description: "Personal portfolio - projects, resume, and more about me.",
+  title: "Alex Levy - Personal Portfolio",
+  description: "Hi there! I&apos;m a senior at Virginia Tech, studying computer science and discrete mathematics. This is my personal portfolio site, describing my projects and experience.",
 };
 
 import Navbar from "./navbar";
