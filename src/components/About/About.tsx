@@ -22,7 +22,7 @@ export default function About() {
           initialDelay={0}
         />
         <div className="text-2xl text-gray-300">
-          Hi there! I&apos;m a senior at Virginia Tech, studying computer science and discrete mathematics. 
+          Hi there! I&apos;m a junior at Virginia Tech, studying computer science and discrete mathematics. 
           My current area of interest is convolutional neural networks and symmetric functions, but I&apos;m equally passionate about skiing cool places 
           and eating great food. Recently, I had the opportunity to attend the Park City Mathematics Institute (PCMI), 
           a three-week math conference in Park City, Utah, where I explored extremal combinatorics and its applications.

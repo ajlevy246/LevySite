@@ -176,7 +176,7 @@ export default function Navbar() {
                             <li><Link href="/#about" onClick={scrollTo}>about</Link></li>
                             <li><Link href="/#projects" onClick={scrollTo}>projects</Link></li>
                             <li><Link href="/#education" onClick={scrollTo}>education</Link></li>
-                            <li><Link className="font-bold" href="/resume.pdf" onClick={scrollTo}><MdPictureAsPdf className="mt-[5px]"/>resume</Link></li>
+                            <li><Link className="font-bold" href="/AlexLevyResume.pdf" onClick={scrollTo}><MdPictureAsPdf className="mt-[5px]"/>resume</Link></li>
                             <li><Link className="font-bold" href="mailto:ajlevy246@gmail.com" onClick={scrollTo}><LuMails className="mt-[5px]"/>contact</Link></li>
                         </ul>
 
@@ -209,7 +209,7 @@ export default function Navbar() {
                             <li><Link href="/#about" onClick={closeAndScroll}>about</Link></li>
                             <li><Link href="/#projects" onClick={closeAndScroll}>projects</Link></li>
                             <li><Link href="/#education" onClick={closeAndScroll}>education</Link></li>
-                            <li><Link className="navExtern" href="/resume.pdf"><MdPictureAsPdf className="mt-[2.5px]"/>resume</Link></li>
+                            <li><Link className="navExtern" href="/AlexLevyResume.pdf"><MdPictureAsPdf className="mt-[2.5px]"/>resume</Link></li>
                             <li><Link className="navExtern" href="mailto:ajlevy246@gmail.com"><LuMails className="mt-[3px]"/>contact</Link></li>
                             <div className="h-[1rem]"/>
                         </motion.ul>

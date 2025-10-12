@@ -23,7 +23,23 @@ export const metadata: Metadata = {
   verification: {
     google: 'cHkxGM-xskW7nnoVIpETkB3Ap6uKULtgfUumbYSk0H0',
   },
-
+  openGraph: {
+    title: "Alex Levy - Personal Portfolio",
+    description:
+      "Hi there! I’m a senior at Virginia Tech, studying computer science and discrete mathematics.",
+    url: "https://alexlevy.me", // ← replace with your actual domain
+    siteName: "Alex Levy - Personal Portfolio",
+    images: [
+      {
+        url: "https://alexlevy.me/AlexLevyProfile.jpg", // served from public/assets/
+        width: 1200,
+        height: 630,
+        alt: "Alex Levy profile image",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 import Navbar from "./navbar";
