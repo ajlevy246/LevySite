@@ -46,8 +46,8 @@ export default function PersonalSitePopup({ setIsOpen }: LevyCASPopupProps) {
                 <button className="modalTopClose" onClick={() => setIsOpen(false)}><FiX /></button>
 
                 {/* Headers */}
-                <h1>LevyCAS</h1>
-                <h2>Modern Computer Algebra System for Python Apps</h2>
+                <h1>Portfolio Site</h1>
+                <h2>Personal Portfolio Built with React and Next.js</h2>
                 
                 {/* Tech Stack */}
                 <ul className="projectStack">
