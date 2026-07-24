@@ -22,11 +22,16 @@ export default function About() {
           initialDelay={0}
         />
         <div className="text-2xl text-gray-300">
-          Hi there! I&apos;m a junior at Virginia Tech, studying computer science and discrete mathematics. 
-          My current area of interest is convolutional neural networks and symmetric functions, but I&apos;m equally passionate about skiing cool places 
+          Hi there! I&apos;m a third-year student at Virginia Tech, studying computer science and discrete mathematics. 
+          My current areas of interest are computer algebra, raytracing, and software testing systems, but I&apos;m equally passionate about skiing cool places 
           and eating great food. Recently, I had the opportunity to attend the Park City Mathematics Institute (PCMI), 
-          a three-week math conference in Park City, Utah, where I explored extremal combinatorics and its applications.
-          Learn more about me and see some of my projects below! 
+          a three-week math conference in Park City, Utah, where I explored extremal combinatorics and its applications. 
+          <br/><br/>
+          I&apos;m currently serving as both a TA and an undergraduate research assistant for Virginia Tech&apos;s Department of Computer Science.
+          I&apos;ll be graduating this spring with dual B.S. degrees, but I&apos;ll be continuing my studies at Virginia Tech through 2027 in a Masters program.
+
+          Learn more about me and my projects below!
+
         </div>
       </div>
       <div className="hidden lg:flex mt-20 self-center">

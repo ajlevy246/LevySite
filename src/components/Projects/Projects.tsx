@@ -18,6 +18,7 @@ import "./projects.css";
 import casdemo from "@/assets/projects/levycasdemo.png";
 import sitedemo from "@/assets/projects/sitedemo.png";
 import earleydemo from "@/assets/projects/earleydemo.png";
+import spritzdemo from "@/assets/projects/spritzdemo.png";
 
 function ProjectLink({ href }: { href: string }) {
   return (
@@ -172,6 +173,51 @@ function EarleyParserCard() {
   )
 }
 
+function SpritzCard() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Close popup on escape press
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  })
+
+  return (
+    <>
+      {/* Project Card */}
+      <motion.div
+        onClick={() => setIsOpen(true)}
+        initial={{ opacity: 0, y: 110 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+      >
+        <div className="projectCard">
+            <h1>Spritz Raytracer <ProjectLink href="https://github.com/ajlevy246/" /></h1>
+            <p>A capable physically-based raytracing application for exploring simple inverse graphics problems, written in C++.</p>
+            <div className="projectImgWrapper">
+            <Image 
+              src={spritzdemo}
+              width="1043"
+              height="607"
+              alt="A scene showcasing various geometric primitives, materials, and an HDR background in the Spritz application."
+            /></div>
+        </div>
+      </motion.div>
+
+      {/* Project popup */}
+      <AnimatePresence>
+        {isOpen && (
+          <EarleyParserPopup setIsOpen={setIsOpen} />
+        )}
+      </AnimatePresence>
+    </>
+  )
+}
+
 export default function Projects() {
   return (
     <section id="projects" className="pt-[25%] md:pt-[8%]">
@@ -181,6 +227,7 @@ export default function Projects() {
         <LevyCASCard />
         <PersonalSiteCard />
         <EarleyParserCard />
+        <SpritzCard />
       </div>
     </section> 
   )
