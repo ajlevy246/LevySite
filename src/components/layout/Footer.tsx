@@ -2,8 +2,7 @@ import { FaGithub } from "react-icons/fa";
 import { BiLogoLinkedinSquare } from "react-icons/bi";
 import { CgMail } from "react-icons/cg";
 
-// @ts-ignore: allow side-effect css import without type declarations
-import "./footer.css";
+import "./Footer.css";
 import { ReactElement } from "react";
 
 type FooterItemProps = {

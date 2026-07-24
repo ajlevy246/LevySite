@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Roboto_Condensed } from "next/font/google";
 
-// @ts-ignore: allow side-effect css import without type declarations
 import "./globals.css";
 
 // const geistSans = Geist({
@@ -44,8 +43,8 @@ export const metadata: Metadata = {
   },
 };
 
-import Navbar from "../components/layout/navbar";
-import Footer from "../components/layout/footer";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 
 export default function RootLayout({
   children,
