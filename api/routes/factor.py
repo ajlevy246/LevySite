@@ -4,7 +4,7 @@ from cas import factor_expression
 
 router = APIRouter()
 
-@router.post("/")
+@router.post("")
 async def factor_route(req: ExpressionRequest):
     try:
         result = factor_expression(

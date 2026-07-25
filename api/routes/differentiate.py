@@ -4,7 +4,7 @@ from cas import differentiate_expression
 
 router = APIRouter()
 
-@router.post("/")
+@router.post("")
 async def differentiate_route(req: ExpressionRequest):
     try:
         result = differentiate_expression(
