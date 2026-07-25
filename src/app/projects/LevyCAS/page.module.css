@@ -1,0 +1,55 @@
+.shell {
+  --chalkboard: #1c2620;
+  --chalkboard-deep: #121a15;
+  --chalk-white: #edeae0;
+  --chalk-yellow: #e8c468;
+  --chalk-blue: #8fc8d9;
+  --rail: #3a4a40;
+  --rail-soft: rgba(237, 234, 224, 0.14);
+  --font-mono: var(--font-jetbrains-mono);
+  --font-math: var(--font-stix);
+  --font-sans: var(--font-inter);
+
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 5rem 1.5rem 6rem;
+  background: radial-gradient(ellipse 120% 80% at 50% -10%, var(--chalkboard) 0%, var(--chalkboard-deep) 70%);
+  color: var(--chalk-white);
+}
+
+.intro {
+  max-width: 640px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--chalk-blue);
+  margin: 0;
+}
+
+.title {
+  font-family: var(--font-math);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: rgba(237, 234, 224, 0.72);
+  margin: 0;
+}

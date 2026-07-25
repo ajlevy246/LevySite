@@ -7,10 +7,10 @@ import { usePathname } from "next/navigation";
 
 // Components imports
 import HeroIntro from "./hero";
-import About from "@/components/About/About";
+import About from "@/data/About/About";
 import RollingGallery from "@/blocks/Components/RollingGallery/RollingGallery";
-import Education from "@/components/Education/Education";
-import Honors from "@/components/Honors/Honors";
+import Education from "@/data/Education/Education";
+import Honors from "@/data/Honors/Honors";
 import Projects from "@/components/Projects/Projects";
 
 // Image imports
