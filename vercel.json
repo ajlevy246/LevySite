@@ -17,5 +17,13 @@
                 }
             ]
         }
-    }
+    },
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": {
+                "service": "frontend"
+            }
+        }
+    ]
 }
