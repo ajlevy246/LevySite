@@ -4,7 +4,7 @@ from cas import integrate_expression
 
 router = APIRouter()
 
-@router.post("/")
+@router.post("")
 async def integrate_route(req: ExpressionRequest):
     try:
         result = integrate_expression(
