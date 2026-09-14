@@ -2,7 +2,7 @@ import { FaGithub } from "react-icons/fa";
 import { BiLogoLinkedinSquare } from "react-icons/bi";
 import { CgMail } from "react-icons/cg";
 
-import "./footer.css";
+import "./Footer.css";
 import { ReactElement } from "react";
 
 type FooterItemProps = {

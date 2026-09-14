@@ -11,8 +11,7 @@ import { FaGithub } from "react-icons/fa";
 import { BiLogoLinkedinSquare } from "react-icons/bi";
 import { CgMail } from "react-icons/cg";
 
-
-import "./navbar.css";
+import "./Navbar.css";
 
 export default function Navbar() {
 
