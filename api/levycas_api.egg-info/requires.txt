@@ -1,3 +1,0 @@
-fastapi
-levycas>=1.0.0
-pydantic
