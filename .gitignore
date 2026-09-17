@@ -44,3 +44,5 @@ package-lock.json
 
 # python build artifacts
 **/__pycache__/
+**/*.egg-info
+**/build/
