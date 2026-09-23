@@ -53,7 +53,7 @@ export default function CASDemo() {
   }
 
   return (
-    <section className={styles.panel}>
+    <section className={styles.panel} aria-label="LevyCAS interactive demo">
       <div className={styles.tabs} role="tablist" aria-label="CAS operation">
         {OPERATIONS.map((op) => (
           <button
