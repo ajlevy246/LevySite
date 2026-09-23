@@ -8,8 +8,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import LevyCASPopup from "@/components/Projects/popups/LevyCASPopup";
-import EarleyParserPopup from "./popups/EarleyParserPopup";
-import PersonalSitePopup from "./popups/PersonalSitePopup";
+import PersonalSitePopup from "@/components/Projects/popups/PersonalSitePopup";
+import SpritzPopup from "@/components/Projects/popups/SpritzPopup";
 
 // Style Imports
 import "./projects.css";
@@ -17,7 +17,6 @@ import "./projects.css";
 // Image Imports
 import casdemo from "@/assets/projects/levycasdemo.png";
 import sitedemo from "@/assets/projects/sitedemo.png";
-import earleydemo from "@/assets/projects/earleydemo.png";
 import spritzdemo from "@/assets/projects/spritzdemo.png";
 
 function ProjectLink({ href }: { href: string }) {
@@ -128,51 +127,6 @@ function PersonalSiteCard() {
   )
 }
 
-function EarleyParserCard() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Close popup on escape press
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsOpen(false);
-    };
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  })
-
-  return (
-    <>
-      {/* Project Card */}
-      <motion.div
-        onClick={() => setIsOpen(true)}
-        initial={{ opacity: 0, y: 110 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-      >
-        <div className="projectCard">
-            <h1>Earley Parser <ProjectLink href="https://github.com/ajlevy246/" /></h1>
-            <p>A powerful python implementation of the Earley algorithm for user-defined context-free grammars. Implemented as a Python package on TestPyPi.</p>
-            <div className="projectImgWrapper">
-            <Image 
-              src={earleydemo}
-              width="1043"
-              height="607"
-              alt="Pseudocode for the first steps of the Earley parsing algorithm, taken from wikipedia"
-            /></div>
-        </div>
-      </motion.div>
-
-      {/* Project popup */}
-      <AnimatePresence>
-        {isOpen && (
-          <EarleyParserPopup setIsOpen={setIsOpen} />
-        )}
-      </AnimatePresence>
-    </>
-  )
-}
-
 function SpritzCard() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -211,7 +165,7 @@ function SpritzCard() {
       {/* Project popup */}
       <AnimatePresence>
         {isOpen && (
-          <EarleyParserPopup setIsOpen={setIsOpen} />
+          <SpritzPopup setIsOpen={setIsOpen} />
         )}
       </AnimatePresence>
     </>
@@ -226,7 +180,6 @@ export default function Projects() {
       <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-[2%] space-y-[10%]">
         <LevyCASCard />
         <PersonalSiteCard />
-        <EarleyParserCard />
         <SpritzCard />
       </div>
     </section> 

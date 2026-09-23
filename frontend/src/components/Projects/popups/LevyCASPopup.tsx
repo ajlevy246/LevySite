@@ -2,7 +2,6 @@
 
 // Dynamic
 import { motion } from "motion/react";
-import { useState } from "react";
 
 // Components
 import Link from "next/link";

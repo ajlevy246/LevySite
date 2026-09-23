@@ -21,7 +21,7 @@ export default function About() {
           startOnVisible={true}
           initialDelay={0}
         />
-        <div className="text-2xl text-gray-300">
+        {/* <div className="text-2xl text-gray-300">
           Hi there! I&apos;m a third-year student at Virginia Tech, studying computer science and discrete mathematics. 
           My current areas of interest are computer algebra, raytracing, and software testing systems, but I&apos;m equally passionate about skiing cool places 
           and eating great food. Recently, I had the opportunity to attend the Park City Mathematics Institute (PCMI), 
@@ -32,6 +32,16 @@ export default function About() {
 
           Learn more about me and my projects below!
 
+        </div> */}
+        <div className="text-2xl text-gray-300">
+          Hi there! I&apos;m Alex, a graduate student at Virginia Tech pursuing an M.Eng. in Computer Science & Applications after
+           completing my undergraduate degrees in computer science and discrete mathematics a year early.
+          <br/><br/>
+          I&apos;m interested in building software that sits at the intersection of theory and practice, particularly relating mathematics, systems, and software engineering.
+           I've explored these interests through projects in computer algebra, automated software testing, machine learning, and parallel computing, as well as 
+           through research and my work as a software engineering intern at eClinicalWorks this past summer.
+          <br/><br/>
+          Outside of computer science, I enjoy skiing, exploring new places, and finding great food. Take a look below to learn more about me and some of my projects.
         </div>
       </div>
       <div className="hidden lg:flex mt-20 self-center">
