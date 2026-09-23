@@ -38,7 +38,7 @@ export default function About() {
            completing my undergraduate degrees in computer science and discrete mathematics a year early.
           <br/><br/>
           I&apos;m interested in building software that sits at the intersection of theory and practice, particularly relating mathematics, systems, and software engineering.
-           I've explored these interests through projects in computer algebra, automated software testing, machine learning, and parallel computing, as well as 
+           I&apos;ve explored these interests through projects in computer algebra, automated software testing, machine learning, and parallel computing, as well as 
            through research and my work as a software engineering intern at eClinicalWorks this past summer.
           <br/><br/>
           Outside of computer science, I enjoy skiing, exploring new places, and finding great food. Take a look below to learn more about me and some of my projects.
