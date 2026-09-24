@@ -15,9 +15,9 @@ import SpritzPopup from "@/components/Projects/popups/SpritzPopup";
 import "./projects.css";
 
 // Image Imports
-import casdemo from "@/assets/projects/levycasdemo.png";
-import sitedemo from "@/assets/projects/sitedemo.png";
-import spritzdemo from "@/assets/projects/spritzdemo.png";
+import casdemo from "@/assets/projects/cards/levycasdemo.png";
+import sitedemo from "@/assets/projects/cards/sitedemo.png";
+import spritzdemo from "@/assets/projects/cards/spritzdemo.png";
 
 function ProjectLink({ href }: { href: string }) {
   return (
@@ -150,8 +150,8 @@ function SpritzCard() {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <div className="projectCard">
-            <h1>Spritz Raytracer <ProjectLink href="https://github.com/ajlevy246/" /></h1>
-            <p>A capable physically-based raytracing application for exploring simple inverse graphics problems, written in C++.</p>
+            <h1>Spritz Raytracer <ProjectLink href="https://github.com/ajlevy246/LevySite" /></h1>
+            <p>A C++ ray tracer and inverse-graphics application for exploring physically based rendering, numerical optimization, and 3D scene reconstruction.</p>
             <div className="projectImgWrapper">
             <Image 
               src={spritzdemo}
