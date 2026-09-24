@@ -8,9 +8,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 // Icon Images
-import pythonlogo from "@/assets/projects/modals/pythonlogo.svg"; // Python
-import huggingfacelogo from "@/assets/projects/modals/huggingfacelogo.svg"; // HuggingFace
-import pytestlogo from "@/assets/projects/modals/pytestlogo.svg"; // Pytest
+import pythonlogo from "@/assets/projects/logos/pythonlogo.svg"; // Python
+import huggingfacelogo from "@/assets/projects/logos/huggingfacelogo.svg"; // HuggingFace
+import pytestlogo from "@/assets/projects/logos/pytestlogo.svg"; // Pytest
 
 // Icons
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"; // Github, External Link icon
@@ -21,7 +21,7 @@ import { FiX } from "react-icons/fi"; // Close button
 import "./popups.css";
 
 // Images
-import casexample from "@/assets/projects/levycasdemo.png";
+import casexample from "@/assets/projects/modals/cas_example.png";
 
 type LevyCASPopupProps = {
     setIsOpen: (open: boolean) => void;

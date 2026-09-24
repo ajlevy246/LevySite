@@ -5,16 +5,16 @@ import Link from "next/link";
 import Image from "next/image";
 
 // Icon Images 
-import nextjslogo from "@/assets/projects/modals/nextlogo.svg"; // Next.js
-import tailwindlogo from "@/assets/projects/modals/taliwindlogo.svg"; // TailwindCSS
-import reactlogo from "@/assets/projects/modals/reactlogo.svg"; // React
+import nextjslogo from "@/assets/projects/logos/nextlogo.svg"; // Next.js
+import tailwindlogo from "@/assets/projects/logos/taliwindlogo.svg"; // TailwindCSS
+import reactlogo from "@/assets/projects/logos/reactlogo.svg"; // React
 
 // Icons
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"; // Github
 import { FiX } from "react-icons/fi"; // Close icon
 
 // Images
-import sitedemo from "@/assets/projects/sitedemo.png";
+import sitedemo from "@/assets/projects/modals/site_example.png";
 
 // Styles
 import "./popups.css";

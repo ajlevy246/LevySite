@@ -5,16 +5,16 @@ import Link from "next/link";
 import Image from "next/image";
 
 // Icon Images 
-import nextjslogo from "@/assets/projects/modals/nextlogo.svg"; // Next.js
-import tailwindlogo from "@/assets/projects/modals/taliwindlogo.svg"; // TailwindCSS
-import reactlogo from "@/assets/projects/modals/reactlogo.svg"; // React
+import nextjslogo from "@/assets/projects/logos/nextlogo.svg"; // Next.js
+import tailwindlogo from "@/assets/projects/logos/taliwindlogo.svg"; // TailwindCSS
+import reactlogo from "@/assets/projects/logos/reactlogo.svg"; // React
 
 // Icons
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"; // Github
 import { FiX } from "react-icons/fi"; // Close icon
 
 // Images
-import sitedemo from "@/assets/projects/sitedemo.png";
+import sitedemo from "@/assets/projects/modals/spritz_example.png";
 
 // Styles
 import "./popups.css";
@@ -51,17 +51,16 @@ export default function SpritzPopup({ setIsOpen }: SpritzPopupProps) {
                 
                 {/* Tech Stack */}
                 <ul className="projectStack">
-                    <li><Image src={nextjslogo} alt="Next.js logo"/>Next.js</li>
-                    <li><Image src={tailwindlogo} alt="TailwindCSS logo"/>TailwindCSS</li>
-                    <li><Image src={reactlogo} alt="React logo"/>React</li>
+                    <li><Image src={nextjslogo} alt="C++ logo"/>C++</li>
+                    <li><Image src={tailwindlogo} alt="CMake logo"/>CMake</li>
+                    <li><Image src={reactlogo} alt="Git logo"/>Git</li>
                 </ul>
 
                 {/* Overview */}
                 <p>
-                    Developed with Next.js and React, this site was designed with a modern look and feel.
-                    Built to showcase my projects and showcase my skills, 
-                    this site serves both static content and contains a dynamic web app showcasing my computer algebra system,
-                    LevyCAS.
+                    Spritz++ is a C++ raytracing engine developed to explore computer graphics, rendering, and numerical optimization.
+                    Originally ported from a Python raytracer, the project evolved into an inverse-graphics testbed for recovering scene 
+                     properties from target images using photometric loss and gradient-based optimization.
                 </p><br />
                 {/* Container for image and features list */}
                 <div className="featuresContainer">
@@ -69,10 +68,10 @@ export default function SpritzPopup({ setIsOpen }: SpritzPopupProps) {
                     <div className="projectFeatures">
                         <h3>Features</h3>
                         <ul>
-                            <li>Parses implicit multiplication and elementary functions using a Pratt parsing algorithm.</li>
-                            <li>Performs symbolic operations including integration, differentiation, and polynomial GCD computation.</li>
-                            <li>Includes automated testing with Pytest and GitHub Actions.</li>
-                            <li>Offers an online API for web applications requiring symbolic math.</li>
+                            <li>Physically-based rendering: perspective cameras, ray-surface intersection, shadows, recursive reflections, refractive materials, and Fresnel-based optics.</li>
+                            <li>Mesh geometry, multiple material models, HDR environment lighting, and complex lighting configurations.</li>
+                            <li>Inverse graphics: Recovers lighting and material parameters by minimizing photometric error between rendered and target images.</li>
+                            <li>Uses finite-difference gradient estimation and ADAM to optimize scene parameters.</li>
                         </ul>
                     </div>
                     
@@ -91,7 +90,7 @@ export default function SpritzPopup({ setIsOpen }: SpritzPopupProps) {
                 </div>
 
 
-                <Link className="modalGithubLink" href="https://github.com/ajlevy246/levysite"><FaGithub /></Link>
+                <Link className="modalGithubLink" href="https://github.com/ajlevy246/LevySite"><FaGithub /></Link>
 
                 {/* Close button */}
                 <button className="modalBottomClose" onClick={() => setIsOpen(false)}>Close</button>
