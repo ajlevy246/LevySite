@@ -23,12 +23,10 @@ export default function LevyCAS() {
   return (
     <main className={`${styles.shell} ${stix.variable} ${jetbrainsMono.variable} ${inter.variable}`}>
       <div className={styles.intro}>
-        <p className={styles.eyebrow}>LevyCAS — symbolic engine</p>
-        <h1 className={styles.title}>Show your work.</h1>
+        <p className={styles.eyebrow}>LevyCAS — computer algebra system</p>
+        <h1 className={styles.title}>Let's do some math!</h1>
         <p className={styles.subtitle}>
-          A small computer algebra system running on FastAPI, wired to this page
-          through a Vercel service binding. Pick an operation, type an expression,
-          watch it get worked out.
+          Select an operation and enter an expression in terms of x.
         </p>
       </div>
       <CASDemo />
