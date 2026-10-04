@@ -4,7 +4,30 @@ import { motion } from "motion/react";
 
 import "./education.css";
 
-function VirginiaTech() {
+function VirginiaTechGrad() {
+    return (
+        <motion.div
+            className="event"
+            initial={{ opacity: 0, y: 45 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: "easeOut" }}
+        >
+            <h1>Virginia Tech - <i>Blacksburg, VA</i></h1>
+            <h3>M.Eng Computer Science & Applications | 2026 - Present</h3>
+            {/* <section>
+                <h2>GPA:</h2>
+                <p>3.97</p>
+            </section> */}
+            <section>
+                <h2 className="lg:whitespace-nowrap">relevant coursework:</h2>
+                <p>multiprocessor programming, databasement management systems, computer architecture, semidefinite programming</p>
+            </section>
+        </motion.div>
+    )
+}
+
+function VirginiaTechUGrad() {
     return (
         <motion.div
             className="event"
@@ -14,10 +37,10 @@ function VirginiaTech() {
             transition={{ duration: 1, ease: "easeOut" }}
         >
             <h1>Virginia Tech - <i>Blacksburg, VA</i></h1>
-            <h3>B.S. Mathematics | B.S. Computer Science | 2023 - Present</h3>
+            <h3>B.S. Mathematics | B.S. Computer Science | 2023 - 2026</h3>
             <section>
                 <h2>GPA:</h2>
-                <p>3.97</p>
+                <p>3.98</p>
             </section>
             <section>
                 <h2 className="lg:whitespace-nowrap">relevant coursework:</h2>
@@ -83,7 +106,8 @@ export default function Education() {
                 transition={{ duration: 1, ease: "easeOut" }}
             >
                 {/* Timeline Cards */}
-                <VirginiaTech />
+                <VirginiaTechGrad />
+                <VirginiaTechUGrad />
                 <MontgomeryCollege />
                 <SherwoodHighSchool />
             </motion.div>
