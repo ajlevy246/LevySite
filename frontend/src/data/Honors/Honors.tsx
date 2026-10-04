@@ -2,50 +2,118 @@
 
 import { motion } from "motion/react";
 
-import "./honors.css";
+const honors = [
+    {
+        title: "The Clifford Beck Award for Excellency in Physics",
+        organization: "Montgomery College, 2023",
+    },
+    {
+        title: "Eagle Scout",
+        organization: "Troop 457 Rockville, MD, 2023",
+    },
+    {
+        title: "AP Scholar with Distinction",
+        organization: "College Board, 2021",
+    },
+];
+
+const awards = [
+    {
+        title: "T. W. Hatcher Scholarship",
+        organization: "Virginia Tech, 2025",
+    },
+    {
+        title: "Ray A. Gaskins Scholarship",
+        organization: "Virginia Tech, 2024 & 2025",
+    },
+    {
+        title: "Richard L. and Georgia W. Kimball Scholarship",
+        organization: "Virginia Tech, 2024",
+    },
+];
+
+const cardVariants = {
+    hidden: (direction: "left" | "right") => ({
+        opacity: 0,
+        x: direction === "left" ? -80 : 80,
+    }),
+    visible: {
+        opacity: 1,
+        x: 0,
+    },
+};
 
 export default function Honors() {
     return (
-        <section id="honors" className="pt-[25%] md:pt-[8%] text-center">
-            {/* Section Title
-            <h2 className="sectionTitle text-5xl mb-[50px]">
-                Honors and Awards
-            </h2> */}
-
-            {/* Honors List */}
-            <div>
-                {/* Honors card */}
+        <section
+            id="honors"
+            className="px-6 pt-[25%] text-center md:px-10 md:pt-[8%]"
+        >
+            <div className="mx-auto grid max-w-7xl grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-12">
+                {/* Honors */}
                 <section>
-                    <h1>Honors</h1>  
-                    <motion.ul
-                        initial={{ opacity: 0, x: -65 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                    >
-                        
-                        <li><b>The Clifford Beck Award for Excellency in Physics</b> - <i>Montgomery College, 2023</i></li>
-                        <li><b>Eagle Scout</b> - <i>Troop 457 Rockville, MD, 2023</i></li>
-                        <li><b>AP Scholar with Distinction</b> - <i>College Board, 2021</i></li>
-                    </motion.ul>
+                    <h1 className="mb-8 text-center text-4xl font-semibold text-white [text-shadow:0_0_16px_#3b82f6] md:text-5xl">
+                        Honors
+                    </h1>
+
+                    <ul className="flex flex-col gap-5">
+                        {honors.map((honor) => (
+                            <motion.li
+                                key={honor.title}
+                                custom="left"
+                                variants={cardVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{
+                                    once: true,
+                                    amount: 0.25,
+                                }}
+                                transition={{
+                                    duration: 0.7,
+                                    ease: "easeOut",
+                                }}
+                                className="min-h-[125px] rounded-2xl border-2 border-white/80 bg-[#0d1b2a] p-6 text-left text-xl shadow-[-1px_4px_12px_#3b82f6] will-change-transform md:text-2xl lg:text-[1.75rem]"
+                            >
+                                <b>{honor.title}</b>
+                                <span> - </span>
+                                <i>{honor.organization}</i>
+                            </motion.li>
+                        ))}
+                    </ul>
                 </section>
 
+                {/* Awards */}
                 <section>
-                    <h1>Awards</h1>
-                    {/* Awards card */}
-                    <motion.ul
-                        initial={{ opacity: 0, x: 65 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                    >
-                        
-                        <li><b>T. W. Hatcher Scholarship</b> - <i>Virginia Tech, 2025</i></li>
-                        <li><b>Ray A. Gaskins Scholarship</b> - <i>Virginia Tech, 2024 & 2025</i></li>
-                        <li><b>Richard L. and Georgia W. Kimball Scholarship</b> - <i>Virginia Tech, 2024</i></li>
-                    </motion.ul>
+                    <h1 className="mb-8 text-center text-4xl font-semibold text-white [text-shadow:0_0_16px_#3b82f6] md:text-5xl">
+                        Awards
+                    </h1>
+
+                    <ul className="flex flex-col gap-5">
+                        {awards.map((award) => (
+                            <motion.li
+                                key={award.title}
+                                custom="right"
+                                variants={cardVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{
+                                    once: true,
+                                    amount: 0.25,
+                                }}
+                                transition={{
+                                    duration: 0.7,
+                                    ease: "easeOut",
+                                }}
+                                className="min-h-[125px] rounded-2xl border-2 border-white/80 bg-[#0d1b2a] p-6 text-left text-xl shadow-[-1px_4px_12px_#3b82f6] will-change-transform md:text-2xl lg:text-[1.75rem]"
+                            >
+                                <b>{award.title}</b>
+                                <span> - </span>
+                                <i>{award.organization}</i>
+                            </motion.li>
+                        ))}
+                    </ul>
                 </section>
             </div>
         </section>
-    )
+    );
 }
