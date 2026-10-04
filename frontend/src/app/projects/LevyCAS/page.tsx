@@ -24,7 +24,7 @@ export default function LevyCAS() {
     <main className={`${styles.shell} ${stix.variable} ${jetbrainsMono.variable} ${inter.variable}`}>
       <div className={styles.intro}>
         <p className={styles.eyebrow}>LevyCAS — computer algebra system</p>
-        <h1 className={styles.title}>Let's do some math!</h1>
+        <h1 className={styles.title}>Let&apos;s do some math!</h1>
         <p className={styles.subtitle}>
           Select an operation and enter an expression in terms of x.
         </p>
